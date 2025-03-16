@@ -1,20 +1,29 @@
-const WebSocket = require("ws");
+const express = require("express");
+const http = require("http");
+const socketIo = require("socket.io");
 const fs = require("fs");
 
-const wss = new WebSocket.Server({ port: 8765 });
+const app = express();
+const server = http.createServer(app);
+const io = socketIo(server, { cors: { origin: "*" } });
 
-wss.on("connection", (ws) => {
+io.on("connection", (socket) => {
     console.log("Client connected");
 
-    ws.on("message", (message) => {
-        // Save received image as a PNG file
-        fs.writeFile("received_image.png", message, (err) => {
+    socket.on("image_upload", (data) => {
+        const { fileType, buffer } = data;
+        const fileExtension = fileType.split("/")[1]; // Extract file extension (e.g., "png")
+        const fileName = `received_image.${fileExtension}`;
+
+        fs.writeFile(fileName, Buffer.from(buffer), (err) => {
             if (err) console.error("Error saving image:", err);
-            else console.log("Image received and saved as received_image.png");
+            else console.log(`Image received and saved as ${fileName}`);
         });
     });
 
-    ws.on("close", () => console.log("Client disconnected"));
+    socket.on("disconnect", () => console.log("Client disconnected"));
 });
 
-console.log("WebSocket server running on ws://localhost:8765");
+server.listen(3000, () => {
+    console.log("Socket.IO server running on http://localhost:3000");
+});
