@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    // "target": "ESNext",
+    "outDir": "./public/dist",
+    "rootDir": "./src/ts",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

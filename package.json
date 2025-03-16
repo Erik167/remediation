@@ -1,9 +1,18 @@
 {
+  "scripts": {
+    "dev": "vite build && nodemon public/dist/index.mjs",
+    "build": "vite build",
+    "start": "node public/dist/index.mjs"
+  },
   "dependencies": {
     "express": "^4.21.2",
-    "fs": "^0.0.1-security",
-    "http": "^0.0.1-security",
     "socket.io": "^4.8.1",
     "ws": "^8.18.1"
-  }
+  },
+  "devDependencies": {
+    "@types/socket.io": "^3.0.2",
+    "nodemon": "^3.1.9",
+    "vite": "^6.2.2"
+  },
+  "type": "module"
 }
