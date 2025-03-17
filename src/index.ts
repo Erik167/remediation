@@ -1,32 +1,32 @@
-import express from 'express';
-import { Server } from 'socket.io';
-import http from 'http';
+import express from 'express'
+import { Server } from 'socket.io'
+import http from 'http'
 
-const app = express();
-const server = http.createServer(app);
+const app = express()
+const server = http.createServer(app)
 const io = new Server(server, {
   cors: { origin: '*' } // Allow all origins for testing
-});
+})
 
 app.get('/', (req, res) => {
-  res.send('Hello from Express + Socket.io');
-});
+  res.send('Hello from Express + Socket.io')
+})
 
 io.on('connection', (socket) => {
-  console.log('A user connected:', socket.id);
+  console.log('Client connected:', socket.id)
 
-  socket.on('message', (message) => {
-    console.log('Server console:', message);
+  socket.on('sendGraphic', (graphic) => {
+    console.log('📡 received graphic: ', graphic)
 
-    io.emit("printJob", "print print");
-  });
+    io.emit("printGraphic", graphic)
+  })
 
   socket.on('disconnect', () => {
-    console.log('User disconnected:', socket.id);
-  });
-});
+    console.log('Client disconnected:', socket.id)
+  })
+})
 
-const PORT = 3000;
+const PORT = 3000
 server.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+  console.log(`Server running on http://localhost:${PORT}`)
+})
