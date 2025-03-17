@@ -1,18 +1,19 @@
 {
   "scripts": {
-    "dev": "vite build && nodemon public/dist/index.mjs",
-    "build": "vite build",
-    "start": "node public/dist/index.mjs"
+    "dev": "nodemon --ext ts --exec ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.10",
+    "@types/socket.io": "^3.0.2",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
   },
   "dependencies": {
     "express": "^4.21.2",
-    "socket.io": "^4.8.1",
-    "ws": "^8.18.1"
-  },
-  "devDependencies": {
-    "@types/socket.io": "^3.0.2",
-    "nodemon": "^3.1.9",
-    "vite": "^6.2.2"
-  },
-  "type": "module"
+    "socket.io": "^4.8.1"
+  }
 }

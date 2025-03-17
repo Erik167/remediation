@@ -1,23 +1,19 @@
-import gn from "express";
-const bn = {}, Dn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  default: bn
-}, Symbol.toStringTag, { value: "Module" }));
-function Mn(m) {
+import In from "express";
+function Dn(m) {
   return m && m.__esModule && Object.prototype.hasOwnProperty.call(m, "default") ? m.default : m;
 }
-function yn(m) {
+function gn(m) {
   if (Object.prototype.hasOwnProperty.call(m, "__esModule")) return m;
-  var v = m.default;
-  if (typeof v == "function") {
+  var h = m.default;
+  if (typeof h == "function") {
     var b = function p() {
-      return this instanceof p ? Reflect.construct(v, arguments, this.constructor) : v.apply(this, arguments);
+      return this instanceof p ? Reflect.construct(h, arguments, this.constructor) : h.apply(this, arguments);
     };
-    b.prototype = v.prototype;
+    b.prototype = h.prototype;
   } else b = {};
   return Object.defineProperty(b, "__esModule", { value: !0 }), Object.keys(m).forEach(function(p) {
-    var h = Object.getOwnPropertyDescriptor(m, p);
-    Object.defineProperty(b, p, h.get ? h : {
+    var v = Object.getOwnPropertyDescriptor(m, p);
+    Object.defineProperty(b, p, v.get ? v : {
       enumerable: !0,
       get: function() {
         return m[p];
@@ -26,13 +22,16 @@ function yn(m) {
   }), b;
 }
 var ge = { exports: {} };
-const B = /* @__PURE__ */ yn(Dn);
+const bn = {}, Mn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: bn
+}, Symbol.toStringTag, { value: "Module" })), B = /* @__PURE__ */ gn(Mn);
 var be = { exports: {} }, ye = { exports: {} }, ri;
 function zn() {
   if (ri) return ye.exports;
   ri = 1, ye.exports = d, ye.exports.preferredCharsets = d;
   var m = /^\s*([^\s;]+)\s*(?:;(.*))?$/;
-  function v(i) {
+  function h(i) {
     for (var a = i.split(","), e = 0, n = 0; e < a.length; e++) {
       var o = b(a[e].trim(), e);
       o && (a[n++] = o);
@@ -59,12 +58,12 @@ function zn() {
   }
   function p(i, a, e) {
     for (var n = { o: -1, q: 0, s: 0 }, o = 0; o < a.length; o++) {
-      var s = h(i, a[o], e);
+      var s = v(i, a[o], e);
       s && (n.s - s.s || n.q - s.q || n.o - s.o) < 0 && (n = s);
     }
     return n;
   }
-  function h(i, a, e) {
+  function v(i, a, e) {
     var n = 0;
     if (a.charset.toLowerCase() === i.toLowerCase())
       n |= 1;
@@ -78,7 +77,7 @@ function zn() {
     };
   }
   function d(i, a) {
-    var e = v(i === void 0 ? "*" : i || "");
+    var e = h(i === void 0 ? "*" : i || "");
     if (!a)
       return e.filter(t).sort(c).map(l);
     var n = a.map(function(s, r) {
@@ -104,10 +103,10 @@ function Ln() {
   if (ci) return we.exports;
   ci = 1, we.exports = d, we.exports.preferredEncodings = d;
   var m = /^\s*([^\s;]+)\s*(?:;(.*))?$/;
-  function v(i) {
+  function h(i) {
     for (var a = i.split(","), e = !1, n = 1, o = 0, s = 0; o < a.length; o++) {
       var r = b(a[o].trim(), o);
-      r && (a[s++] = r, e = e || h("identity", r), n = Math.min(n, r.q || 1));
+      r && (a[s++] = r, e = e || v("identity", r), n = Math.min(n, r.q || 1));
     }
     return e || (a[s++] = {
       encoding: "identity",
@@ -135,12 +134,12 @@ function Ln() {
   }
   function p(i, a, e) {
     for (var n = { o: -1, q: 0, s: 0 }, o = 0; o < a.length; o++) {
-      var s = h(i, a[o], e);
+      var s = v(i, a[o], e);
       s && (n.s - s.s || n.q - s.q || n.o - s.o) < 0 && (n = s);
     }
     return n;
   }
-  function h(i, a, e) {
+  function v(i, a, e) {
     var n = 0;
     if (a.encoding.toLowerCase() === i.toLowerCase())
       n |= 1;
@@ -154,7 +153,7 @@ function Ln() {
     };
   }
   function d(i, a) {
-    var e = v(i || "");
+    var e = h(i || "");
     if (!a)
       return e.filter(t).sort(c).map(l);
     var n = a.map(function(s, r) {
@@ -180,7 +179,7 @@ function Un() {
   if (pi) return Ce.exports;
   pi = 1, Ce.exports = d, Ce.exports.preferredLanguages = d;
   var m = /^\s*([^\s\-;]+)(?:-([^\s;]+))?\s*(?:;(.*))?$/;
-  function v(i) {
+  function h(i) {
     for (var a = i.split(","), e = 0, n = 0; e < a.length; e++) {
       var o = b(a[e].trim(), e);
       o && (a[n++] = o);
@@ -208,12 +207,12 @@ function Un() {
   }
   function p(i, a, e) {
     for (var n = { o: -1, q: 0, s: 0 }, o = 0; o < a.length; o++) {
-      var s = h(i, a[o], e);
+      var s = v(i, a[o], e);
       s && (n.s - s.s || n.q - s.q || n.o - s.o) < 0 && (n = s);
     }
     return n;
   }
-  function h(i, a, e) {
+  function v(i, a, e) {
     var n = b(i);
     if (!n) return null;
     var o = 0;
@@ -233,7 +232,7 @@ function Un() {
     };
   }
   function d(i, a) {
-    var e = v(i === void 0 ? "*" : i || "");
+    var e = h(i === void 0 ? "*" : i || "");
     if (!a)
       return e.filter(t).sort(c).map(l);
     var n = a.map(function(s, r) {
@@ -259,7 +258,7 @@ function $n() {
   if (li) return ke.exports;
   li = 1, ke.exports = d, ke.exports.preferredMediaTypes = d;
   var m = /^\s*([^\s\/;]+)\/([^;\s]+)\s*(?:;(.*))?$/;
-  function v(o) {
+  function h(o) {
     for (var s = e(o), r = 0, u = 0; r < s.length; r++) {
       var f = b(s[r].trim(), r);
       f && (s[u++] = f);
@@ -289,12 +288,12 @@ function $n() {
   }
   function p(o, s, r) {
     for (var u = { o: -1, q: 0, s: 0 }, f = 0; f < s.length; f++) {
-      var g = h(o, s[f], r);
+      var g = v(o, s[f], r);
       g && (u.s - g.s || u.q - g.q || u.o - g.o) < 0 && (u = g);
     }
     return u;
   }
-  function h(o, s, r) {
+  function v(o, s, r) {
     var u = b(o), f = 0;
     if (!u)
       return null;
@@ -322,7 +321,7 @@ function $n() {
     };
   }
   function d(o, s) {
-    var r = v(o === void 0 ? "*/*" : o || "");
+    var r = h(o === void 0 ? "*/*" : o || "");
     if (!s)
       return r.filter(t).sort(c).map(l);
     var u = s.map(function(g, k) {
@@ -376,34 +375,34 @@ var ui;
 function Hn() {
   if (ui) return be.exports;
   ui = 1;
-  var m = zn(), v = Ln(), b = Un(), p = $n();
-  be.exports = h, be.exports.Negotiator = h;
-  function h(d) {
-    if (!(this instanceof h))
-      return new h(d);
+  var m = zn(), h = Ln(), b = Un(), p = $n();
+  be.exports = v, be.exports.Negotiator = v;
+  function v(d) {
+    if (!(this instanceof v))
+      return new v(d);
     this.request = d;
   }
-  return h.prototype.charset = function(c) {
+  return v.prototype.charset = function(c) {
     var l = this.charsets(c);
     return l && l[0];
-  }, h.prototype.charsets = function(c) {
+  }, v.prototype.charsets = function(c) {
     return m(this.request.headers["accept-charset"], c);
-  }, h.prototype.encoding = function(c) {
+  }, v.prototype.encoding = function(c) {
     var l = this.encodings(c);
     return l && l[0];
-  }, h.prototype.encodings = function(c) {
-    return v(this.request.headers["accept-encoding"], c);
-  }, h.prototype.language = function(c) {
+  }, v.prototype.encodings = function(c) {
+    return h(this.request.headers["accept-encoding"], c);
+  }, v.prototype.language = function(c) {
     var l = this.languages(c);
     return l && l[0];
-  }, h.prototype.languages = function(c) {
+  }, v.prototype.languages = function(c) {
     return b(this.request.headers["accept-language"], c);
-  }, h.prototype.mediaType = function(c) {
+  }, v.prototype.mediaType = function(c) {
     var l = this.mediaTypes(c);
     return l && l[0];
-  }, h.prototype.mediaTypes = function(c) {
+  }, v.prototype.mediaTypes = function(c) {
     return p(this.request.headers.accept, c);
-  }, h.prototype.preferredCharset = h.prototype.charset, h.prototype.preferredCharsets = h.prototype.charsets, h.prototype.preferredEncoding = h.prototype.encoding, h.prototype.preferredEncodings = h.prototype.encodings, h.prototype.preferredLanguage = h.prototype.language, h.prototype.preferredLanguages = h.prototype.languages, h.prototype.preferredMediaType = h.prototype.mediaType, h.prototype.preferredMediaTypes = h.prototype.mediaTypes, be.exports;
+  }, v.prototype.preferredCharset = v.prototype.charset, v.prototype.preferredCharsets = v.prototype.charsets, v.prototype.preferredEncoding = v.prototype.encoding, v.prototype.preferredEncodings = v.prototype.encodings, v.prototype.preferredLanguage = v.prototype.language, v.prototype.preferredLanguages = v.prototype.languages, v.prototype.preferredMediaType = v.prototype.mediaType, v.prototype.preferredMediaTypes = v.prototype.mediaTypes, be.exports;
 }
 var Be = {};
 const Vn = {
@@ -2706,13 +2705,13 @@ function Wn() {
 var mi;
 function Kn() {
   return mi || (mi = 1, function(m) {
-    var v = Wn(), b = B.extname, p = /^\s*([^;\s]*)(?:;|\s|$)/, h = /^text\//i;
+    var h = Wn(), b = B.extname, p = /^\s*([^;\s]*)(?:;|\s|$)/, v = /^text\//i;
     m.charset = d, m.charsets = { lookup: d }, m.contentType = c, m.extension = l, m.extensions = /* @__PURE__ */ Object.create(null), m.lookup = t, m.types = /* @__PURE__ */ Object.create(null), i(m.extensions, m.types);
     function d(a) {
       if (!a || typeof a != "string")
         return !1;
-      var e = p.exec(a), n = e && v[e[1].toLowerCase()];
-      return n && n.charset ? n.charset : e && h.test(e[1]) ? "UTF-8" : !1;
+      var e = p.exec(a), n = e && h[e[1].toLowerCase()];
+      return n && n.charset ? n.charset : e && v.test(e[1]) ? "UTF-8" : !1;
     }
     function c(a) {
       if (!a || typeof a != "string")
@@ -2740,14 +2739,14 @@ function Kn() {
     }
     function i(a, e) {
       var n = ["nginx", "apache", void 0, "iana"];
-      Object.keys(v).forEach(function(s) {
-        var r = v[s], u = r.extensions;
+      Object.keys(h).forEach(function(s) {
+        var r = h[s], u = r.extensions;
         if (!(!u || !u.length)) {
           a[s] = u;
           for (var f = 0; f < u.length; f++) {
             var g = u[f];
             if (e[g]) {
-              var k = n.indexOf(v[e[g]].source), T = n.indexOf(r.source);
+              var k = n.indexOf(h[e[g]].source), T = n.indexOf(r.source);
               if (e[g] !== "application/octet-stream" && (k > T || k === T && e[g].substr(0, 12) === "application/"))
                 continue;
             }
@@ -2768,7 +2767,7 @@ var Ie, fi;
 function ai() {
   if (fi) return Ie;
   fi = 1;
-  var m = Hn(), v = Kn();
+  var m = Hn(), h = Kn();
   Ie = b;
   function b(d) {
     if (!(this instanceof b))
@@ -2786,7 +2785,7 @@ function ai() {
       return this.negotiator.mediaTypes();
     if (!this.headers.accept)
       return c[0];
-    var t = c.map(p), i = this.negotiator.mediaTypes(t.filter(h)), a = i[0];
+    var t = c.map(p), i = this.negotiator.mediaTypes(t.filter(v)), a = i[0];
     return a ? c[t.indexOf(a)] : !1;
   }, b.prototype.encoding = b.prototype.encodings = function(d) {
     var c = d;
@@ -2814,9 +2813,9 @@ function ai() {
     return !c || c.length === 0 ? this.negotiator.languages() : this.negotiator.languages(c)[0] || !1;
   };
   function p(d) {
-    return d.indexOf("/") === -1 ? v.lookup(d) : d;
+    return d.indexOf("/") === -1 ? h.lookup(d) : d;
   }
-  function h(d) {
+  function v(d) {
     return typeof d == "string";
   }
   return Ie;
@@ -2826,26 +2825,26 @@ var De = {}, V = {}, Me = { exports: {} };
  * base64id v0.1.0
  */
 var hi;
-function wn() {
-  return hi || (hi = 1, function(m, v) {
+function yn() {
+  return hi || (hi = 1, function(m, h) {
     var b = B, p = function() {
     };
-    p.prototype.getRandomBytes = function(h) {
+    p.prototype.getRandomBytes = function(v) {
       var d = 4096, c = this;
-      if (h = h || 12, h > d)
-        return b.randomBytes(h);
-      var l = parseInt(d / h), t = parseInt(l * 0.85);
+      if (v = v || 12, v > d)
+        return b.randomBytes(v);
+      var l = parseInt(d / v), t = parseInt(l * 0.85);
       if (!t || (this.bytesBufferIndex == null && (this.bytesBufferIndex = -1), this.bytesBufferIndex == l && (this.bytesBuffer = null, this.bytesBufferIndex = -1), (this.bytesBufferIndex == -1 || this.bytesBufferIndex > t) && (this.isGeneratingBytes || (this.isGeneratingBytes = !0, b.randomBytes(d, function(a, e) {
         c.bytesBuffer = e, c.bytesBufferIndex = 0, c.isGeneratingBytes = !1;
       })), this.bytesBufferIndex == -1)))
-        return b.randomBytes(h);
-      var i = this.bytesBuffer.slice(h * this.bytesBufferIndex, h * (this.bytesBufferIndex + 1));
+        return b.randomBytes(v);
+      var i = this.bytesBuffer.slice(v * this.bytesBufferIndex, v * (this.bytesBufferIndex + 1));
       return this.bytesBufferIndex++, i;
     }, p.prototype.generateId = function() {
-      var h = Buffer.alloc(15);
-      return h.writeInt32BE ? (this.sequenceNumber = this.sequenceNumber + 1 | 0, h.writeInt32BE(this.sequenceNumber, 11), b.randomBytes ? this.getRandomBytes(12).copy(h) : [0, 4, 8].forEach(function(d) {
-        h.writeInt32BE(Math.random() * Math.pow(2, 32) | 0, d);
-      }), h.toString("base64").replace(/\//g, "_").replace(/\+/g, "-")) : Math.abs(Math.random() * Math.random() * Date.now() | 0).toString() + Math.abs(Math.random() * Math.random() * Date.now() | 0).toString();
+      var v = Buffer.alloc(15);
+      return v.writeInt32BE ? (this.sequenceNumber = this.sequenceNumber + 1 | 0, v.writeInt32BE(this.sequenceNumber, 11), b.randomBytes ? this.getRandomBytes(12).copy(v) : [0, 4, 8].forEach(function(d) {
+        v.writeInt32BE(Math.random() * Math.pow(2, 32) | 0, d);
+      }), v.toString("base64").replace(/\//g, "_").replace(/\+/g, "-")) : Math.abs(Math.random() * Math.random() * Date.now() | 0).toString() + Math.abs(Math.random() * Math.random() * Date.now() | 0).toString();
     }, m.exports = new p();
   }(Me)), Me.exports;
 }
@@ -2855,9 +2854,9 @@ function si() {
   vi = 1, Object.defineProperty(M, "__esModule", { value: !0 }), M.ERROR_PACKET = M.PACKET_TYPES_REVERSE = M.PACKET_TYPES = void 0;
   const m = /* @__PURE__ */ Object.create(null);
   M.PACKET_TYPES = m, m.open = "0", m.close = "1", m.ping = "2", m.pong = "3", m.message = "4", m.upgrade = "5", m.noop = "6";
-  const v = /* @__PURE__ */ Object.create(null);
-  M.PACKET_TYPES_REVERSE = v, Object.keys(m).forEach((p) => {
-    v[m[p]] = p;
+  const h = /* @__PURE__ */ Object.create(null);
+  M.PACKET_TYPES_REVERSE = h, Object.keys(m).forEach((p) => {
+    h[m[p]] = p;
   });
   const b = { type: "error", data: "parser error" };
   return M.ERROR_PACKET = b, M;
@@ -2866,8 +2865,8 @@ var xi;
 function Jn() {
   if (xi) return Z;
   xi = 1, Object.defineProperty(Z, "__esModule", { value: !0 }), Z.encodePacket = void 0, Z.encodePacketToBinary = t;
-  const m = si(), v = typeof Blob == "function" || typeof Blob < "u" && Object.prototype.toString.call(Blob) === "[object BlobConstructor]", b = typeof ArrayBuffer == "function", p = (i) => typeof ArrayBuffer.isView == "function" ? ArrayBuffer.isView(i) : i && i.buffer instanceof ArrayBuffer, h = ({ type: i, data: a }, e, n) => v && a instanceof Blob ? e ? n(a) : d(a, n) : b && (a instanceof ArrayBuffer || p(a)) ? e ? n(a) : d(new Blob([a]), n) : n(m.PACKET_TYPES[i] + (a || ""));
-  Z.encodePacket = h;
+  const m = si(), h = typeof Blob == "function" || typeof Blob < "u" && Object.prototype.toString.call(Blob) === "[object BlobConstructor]", b = typeof ArrayBuffer == "function", p = (i) => typeof ArrayBuffer.isView == "function" ? ArrayBuffer.isView(i) : i && i.buffer instanceof ArrayBuffer, v = ({ type: i, data: a }, e, n) => h && a instanceof Blob ? e ? n(a) : d(a, n) : b && (a instanceof ArrayBuffer || p(a)) ? e ? n(a) : d(new Blob([a]), n) : n(m.PACKET_TYPES[i] + (a || ""));
+  Z.encodePacket = v;
   const d = (i, a) => {
     const e = new FileReader();
     return e.onload = function() {
@@ -2880,11 +2879,11 @@ function Jn() {
   }
   let l;
   function t(i, a) {
-    if (v && i.data instanceof Blob)
+    if (h && i.data instanceof Blob)
       return i.data.arrayBuffer().then(c).then(a);
     if (b && (i.data instanceof ArrayBuffer || p(i.data)))
       return a(c(i.data));
-    h(i, !1, (e) => {
+    v(i, !1, (e) => {
       l || (l = new TextEncoder()), a(l.encode(e));
     });
   }
@@ -2894,22 +2893,22 @@ var te = {}, W = {}, gi;
 function Yn() {
   if (gi) return W;
   gi = 1, Object.defineProperty(W, "__esModule", { value: !0 }), W.decode = W.encode = void 0;
-  const m = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", v = typeof Uint8Array > "u" ? [] : new Uint8Array(256);
-  for (let h = 0; h < m.length; h++)
-    v[m.charCodeAt(h)] = h;
-  const b = (h) => {
-    let d = new Uint8Array(h), c, l = d.length, t = "";
+  const m = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", h = typeof Uint8Array > "u" ? [] : new Uint8Array(256);
+  for (let v = 0; v < m.length; v++)
+    h[m.charCodeAt(v)] = v;
+  const b = (v) => {
+    let d = new Uint8Array(v), c, l = d.length, t = "";
     for (c = 0; c < l; c += 3)
       t += m[d[c] >> 2], t += m[(d[c] & 3) << 4 | d[c + 1] >> 4], t += m[(d[c + 1] & 15) << 2 | d[c + 2] >> 6], t += m[d[c + 2] & 63];
     return l % 3 === 2 ? t = t.substring(0, t.length - 1) + "=" : l % 3 === 1 && (t = t.substring(0, t.length - 2) + "=="), t;
   };
   W.encode = b;
-  const p = (h) => {
-    let d = h.length * 0.75, c = h.length, l, t = 0, i, a, e, n;
-    h[h.length - 1] === "=" && (d--, h[h.length - 2] === "=" && d--);
+  const p = (v) => {
+    let d = v.length * 0.75, c = v.length, l, t = 0, i, a, e, n;
+    v[v.length - 1] === "=" && (d--, v[v.length - 2] === "=" && d--);
     const o = new ArrayBuffer(d), s = new Uint8Array(o);
     for (l = 0; l < c; l += 4)
-      i = v[h.charCodeAt(l)], a = v[h.charCodeAt(l + 1)], e = v[h.charCodeAt(l + 2)], n = v[h.charCodeAt(l + 3)], s[t++] = i << 2 | a >> 4, s[t++] = (a & 15) << 4 | e >> 2, s[t++] = (e & 3) << 6 | n & 63;
+      i = h[v.charCodeAt(l)], a = h[v.charCodeAt(l + 1)], e = h[v.charCodeAt(l + 2)], n = h[v.charCodeAt(l + 3)], s[t++] = i << 2 | a >> 4, s[t++] = (a & 15) << 4 | e >> 2, s[t++] = (e & 3) << 6 | n & 63;
     return o;
   };
   return W.decode = p, W;
@@ -2918,7 +2917,7 @@ var bi;
 function Qn() {
   if (bi) return te;
   bi = 1, Object.defineProperty(te, "__esModule", { value: !0 }), te.decodePacket = void 0;
-  const m = si(), v = Yn(), b = typeof ArrayBuffer == "function", p = (c, l) => {
+  const m = si(), h = Yn(), b = typeof ArrayBuffer == "function", p = (c, l) => {
     if (typeof c != "string")
       return {
         type: "message",
@@ -2927,7 +2926,7 @@ function Qn() {
     const t = c.charAt(0);
     return t === "b" ? {
       type: "message",
-      data: h(c.substring(1), l)
+      data: v(c.substring(1), l)
     } : m.PACKET_TYPES_REVERSE[t] ? c.length > 1 ? {
       type: m.PACKET_TYPES_REVERSE[t],
       data: c.substring(1)
@@ -2936,9 +2935,9 @@ function Qn() {
     } : m.ERROR_PACKET;
   };
   te.decodePacket = p;
-  const h = (c, l) => {
+  const v = (c, l) => {
     if (b) {
-      const t = (0, v.decode)(c);
+      const t = (0, h.decode)(c);
       return d(t, l);
     } else
       return { base64: !0, data: c };
@@ -2957,26 +2956,26 @@ var yi;
 function Oe() {
   return yi || (yi = 1, function(m) {
     Object.defineProperty(m, "__esModule", { value: !0 }), m.decodePayload = m.decodePacket = m.encodePayload = m.encodePacket = m.protocol = void 0, m.createPacketEncoderStream = l, m.createPacketDecoderStream = e;
-    const v = Jn();
+    const h = Jn();
     Object.defineProperty(m, "encodePacket", { enumerable: !0, get: function() {
-      return v.encodePacket;
+      return h.encodePacket;
     } });
     const b = Qn();
     Object.defineProperty(m, "decodePacket", { enumerable: !0, get: function() {
       return b.decodePacket;
     } });
-    const p = si(), h = "", d = (n, o) => {
+    const p = si(), v = "", d = (n, o) => {
       const s = n.length, r = new Array(s);
       let u = 0;
       n.forEach((f, g) => {
-        (0, v.encodePacket)(f, !1, (k) => {
-          r[g] = k, ++u === s && o(r.join(h));
+        (0, h.encodePacket)(f, !1, (k) => {
+          r[g] = k, ++u === s && o(r.join(v));
         });
       });
     };
     m.encodePayload = d;
     const c = (n, o) => {
-      const s = n.split(h), r = [];
+      const s = n.split(v), r = [];
       for (let u = 0; u < s.length; u++) {
         const f = (0, b.decodePacket)(s[u], o);
         if (r.push(f), f.type === "error")
@@ -2988,7 +2987,7 @@ function Oe() {
     function l() {
       return new TransformStream({
         transform(n, o) {
-          (0, v.encodePacketToBinary)(n, (s) => {
+          (0, h.encodePacketToBinary)(n, (s) => {
             const r = s.length;
             let u;
             if (r < 126)
@@ -3070,7 +3069,7 @@ function Gn() {
   if (wi) return Ue;
   wi = 1;
   var m = String.fromCharCode;
-  function v(o) {
+  function h(o) {
     for (var s = [], r = 0, u = o.length, f, g; r < u; )
       f = o.charCodeAt(r++), f >= 55296 && f <= 56319 && r < u ? (g = o.charCodeAt(r++), (g & 64512) == 56320 ? s.push(((f & 1023) << 10) + (g & 1023) + 65536) : (s.push(f), r--)) : s.push(f);
     return s;
@@ -3088,18 +3087,18 @@ function Gn() {
     }
     return !0;
   }
-  function h(o, s) {
+  function v(o, s) {
     return m(o >> s & 63 | 128);
   }
   function d(o, s) {
     if ((o & 4294967168) == 0)
       return m(o);
     var r = "";
-    return (o & 4294965248) == 0 ? r = m(o >> 6 & 31 | 192) : (o & 4294901760) == 0 ? (p(o, s) || (o = 65533), r = m(o >> 12 & 15 | 224), r += h(o, 6)) : (o & 4292870144) == 0 && (r = m(o >> 18 & 7 | 240), r += h(o, 12), r += h(o, 6)), r += m(o & 63 | 128), r;
+    return (o & 4294965248) == 0 ? r = m(o >> 6 & 31 | 192) : (o & 4294901760) == 0 ? (p(o, s) || (o = 65533), r = m(o >> 12 & 15 | 224), r += v(o, 6)) : (o & 4292870144) == 0 && (r = m(o >> 18 & 7 | 240), r += v(o, 12), r += v(o, 6)), r += m(o & 63 | 128), r;
   }
   function c(o, s) {
     s = s || {};
-    for (var r = s.strict !== !1, u = v(o), f = u.length, g = -1, k, T = ""; ++g < f; )
+    for (var r = s.strict !== !1, u = h(o), f = u.length, g = -1, k, T = ""; ++g < f; )
       k = u[g], T += d(k, r);
     return T;
   }
@@ -3137,7 +3136,7 @@ function Gn() {
   function n(o, s) {
     s = s || {};
     var r = s.strict !== !1;
-    i = v(o), a = i.length, e = 0;
+    i = h(o), a = i.length, e = 0;
     for (var u = [], f; (f = t(r)) !== !1; )
       u.push(f);
     return b(u);
@@ -3152,7 +3151,7 @@ var Ci;
 function Xn() {
   return Ci || (Ci = 1, function(m) {
     Object.defineProperty(m, "__esModule", { value: !0 }), m.packets = m.protocol = void 0, m.encodePacket = c, m.encodeBase64Packet = t, m.decodePacket = i, m.decodeBase64Packet = e, m.encodePayload = n, m.decodePayload = r, m.encodePayloadAsBinary = k, m.decodePayloadAsBinary = E;
-    var v = Gn();
+    var h = Gn();
     m.protocol = 3;
     const b = (x) => {
       for (const w of x)
@@ -3169,7 +3168,7 @@ function Xn() {
       upgrade: 5,
       noop: 6
     };
-    var p = Object.keys(m.packets), h = { type: "error", data: "parser error" };
+    var p = Object.keys(m.packets), v = { type: "error", data: "parser error" };
     const d = Buffer.concat([]);
     function c(x, w, C, _) {
       if (typeof w == "function" && (_ = w, w = null), typeof C == "function" && (_ = C, C = null), Buffer.isBuffer(x.data))
@@ -3177,7 +3176,7 @@ function Xn() {
       if (x.data && (x.data.buffer || x.data) instanceof ArrayBuffer)
         return l({ type: x.type, data: g(x.data) }, w, _);
       var F = m.packets[x.type];
-      return x.data !== void 0 && (F += C ? v.encode(String(x.data), { strict: !1 }) : String(x.data)), _("" + F);
+      return x.data !== void 0 && (F += C ? h.encode(String(x.data), { strict: !1 }) : String(x.data)), _("" + F);
     }
     function l(x, w, C) {
       if (!w)
@@ -3191,10 +3190,10 @@ function Xn() {
     }
     function i(x, w, C) {
       if (x === void 0)
-        return h;
+        return v;
       var _;
       if (typeof x == "string")
-        return _ = x.charAt(0), _ === "b" ? e(x.slice(1), w) : C && (x = a(x), x === !1) || Number(_) != _ || !p[_] ? h : x.length > 1 ? { type: p[_], data: x.slice(1) } : { type: p[_] };
+        return _ = x.charAt(0), _ === "b" ? e(x.slice(1), w) : C && (x = a(x), x === !1) || Number(_) != _ || !p[_] ? v : x.length > 1 ? { type: p[_], data: x.slice(1) } : { type: p[_] };
       if (w === "arraybuffer") {
         var F = new Uint8Array(x);
         return _ = F[0], { type: p[_], data: F.buffer.slice(1) };
@@ -3203,7 +3202,7 @@ function Xn() {
     }
     function a(x) {
       try {
-        x = v.decode(x, { strict: !1 });
+        x = h.decode(x, { strict: !1 });
       } catch {
         return !1;
       }
@@ -3247,7 +3246,7 @@ function Xn() {
       if (typeof x != "string")
         return E(x, w, C);
       if (typeof w == "function" && (C = w, w = null), x === "")
-        return C(h, 0, 1);
+        return C(v, 0, 1);
       for (var _ = "", F, S, j, R = 0, y = x.length; R < y; R++) {
         var A = x.charAt(R);
         if (A !== ":") {
@@ -3255,10 +3254,10 @@ function Xn() {
           continue;
         }
         if (_ === "" || _ != (F = Number(_)) || (S = x.slice(R + 1, R + 1 + F), _ != S.length))
-          return C(h, 0, 1);
+          return C(v, 0, 1);
         if (S.length) {
-          if (j = i(S, w, !1), h.type === j.type && h.data === j.data)
-            return C(h, 0, 1);
+          if (j = i(S, w, !1), v.type === j.type && v.data === j.data)
+            return C(v, 0, 1);
           var O = C(j, R + F, y);
           if (O === !1)
             return;
@@ -3266,7 +3265,7 @@ function Xn() {
         R += F, _ = "";
       }
       if (_ !== "")
-        return C(h, 0, 1);
+        return C(v, 0, 1);
     }
     function u(x) {
       for (var w = "", C = 0, _ = x.length; C < _; C++)
@@ -3311,7 +3310,7 @@ function Xn() {
         var j = "", R = _[0] === 0;
         for (S = 1; _[S] !== 255; S++) {
           if (j.length > 310)
-            return C(h, 0, 1);
+            return C(v, 0, 1);
           j += "" + _[S];
         }
         _ = _.slice(j.length + 1);
@@ -3330,7 +3329,7 @@ var Ee = { exports: {} }, $e, ki;
 function Zn() {
   if (ki) return $e;
   ki = 1;
-  var m = 1e3, v = m * 60, b = v * 60, p = b * 24, h = p * 7, d = p * 365.25;
+  var m = 1e3, h = m * 60, b = h * 60, p = b * 24, v = p * 7, d = p * 365.25;
   $e = function(a, e) {
     e = e || {};
     var n = typeof a;
@@ -3359,7 +3358,7 @@ function Zn() {
           case "weeks":
           case "week":
           case "w":
-            return n * h;
+            return n * v;
           case "days":
           case "day":
           case "d":
@@ -3375,7 +3374,7 @@ function Zn() {
           case "mins":
           case "min":
           case "m":
-            return n * v;
+            return n * h;
           case "seconds":
           case "second":
           case "secs":
@@ -3396,11 +3395,11 @@ function Zn() {
   }
   function l(a) {
     var e = Math.abs(a);
-    return e >= p ? Math.round(a / p) + "d" : e >= b ? Math.round(a / b) + "h" : e >= v ? Math.round(a / v) + "m" : e >= m ? Math.round(a / m) + "s" : a + "ms";
+    return e >= p ? Math.round(a / p) + "d" : e >= b ? Math.round(a / b) + "h" : e >= h ? Math.round(a / h) + "m" : e >= m ? Math.round(a / m) + "s" : a + "ms";
   }
   function t(a) {
     var e = Math.abs(a);
-    return e >= p ? i(a, e, p, "day") : e >= b ? i(a, e, b, "hour") : e >= v ? i(a, e, v, "minute") : e >= m ? i(a, e, m, "second") : a + " ms";
+    return e >= p ? i(a, e, p, "day") : e >= b ? i(a, e, b, "hour") : e >= h ? i(a, e, h, "minute") : e >= m ? i(a, e, m, "second") : a + " ms";
   }
   function i(a, e, n, o) {
     var s = e >= n * 1.5;
@@ -3412,9 +3411,9 @@ var He, _i;
 function ea() {
   if (_i) return He;
   _i = 1;
-  function m(v) {
-    p.debug = p, p.default = p, p.coerce = i, p.disable = c, p.enable = d, p.enabled = l, p.humanize = Zn(), p.destroy = a, Object.keys(v).forEach((e) => {
-      p[e] = v[e];
+  function m(h) {
+    p.debug = p, p.default = p, p.coerce = i, p.disable = c, p.enable = d, p.enabled = l, p.humanize = Zn(), p.destroy = a, Object.keys(h).forEach((e) => {
+      p[e] = h[e];
     }), p.names = [], p.skips = [], p.formatters = {};
     function b(e) {
       let n = 0;
@@ -3443,7 +3442,7 @@ function ea() {
           return w;
         }), p.formatArgs.call(g, f), (g.log || p.log).apply(g, f);
       }
-      return u.namespace = e, u.useColors = p.useColors(), u.color = p.selectColor(e), u.extend = h, u.destroy = p.destroy, Object.defineProperty(u, "enabled", {
+      return u.namespace = e, u.useColors = p.useColors(), u.color = p.selectColor(e), u.extend = v, u.destroy = p.destroy, Object.defineProperty(u, "enabled", {
         enumerable: !0,
         configurable: !1,
         get: () => o !== null ? o : (s !== p.namespaces && (s = p.namespaces, r = p.enabled(e)), r),
@@ -3452,7 +3451,7 @@ function ea() {
         }
       }), typeof p.init == "function" && p.init(u), u;
     }
-    function h(e, n) {
+    function v(e, n) {
       const o = p(this.namespace + (typeof n > "u" ? ":" : n) + e);
       return o.log = this.log, o;
     }
@@ -3497,13 +3496,13 @@ function ea() {
 }
 var Ei;
 function L() {
-  return Ei || (Ei = 1, function(m, v) {
-    v.formatArgs = p, v.save = h, v.load = d, v.useColors = b, v.storage = c(), v.destroy = /* @__PURE__ */ (() => {
+  return Ei || (Ei = 1, function(m, h) {
+    h.formatArgs = p, h.save = v, h.load = d, h.useColors = b, h.storage = c(), h.destroy = /* @__PURE__ */ (() => {
       let t = !1;
       return () => {
         t || (t = !0, console.warn("Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`."));
       };
-    })(), v.colors = [
+    })(), h.colors = [
       "#0000CC",
       "#0000FF",
       "#0033CC",
@@ -3603,18 +3602,18 @@ function L() {
         n !== "%%" && (a++, n === "%c" && (e = a));
       }), t.splice(e, 0, i);
     }
-    v.log = console.debug || console.log || (() => {
+    h.log = console.debug || console.log || (() => {
     });
-    function h(t) {
+    function v(t) {
       try {
-        t ? v.storage.setItem("debug", t) : v.storage.removeItem("debug");
+        t ? h.storage.setItem("debug", t) : h.storage.removeItem("debug");
       } catch {
       }
     }
     function d() {
       let t;
       try {
-        t = v.storage.getItem("debug");
+        t = h.storage.getItem("debug");
       } catch {
       }
       return !t && typeof process < "u" && "env" in process && (t = process.env.DEBUG), t;
@@ -3625,7 +3624,7 @@ function L() {
       } catch {
       }
     }
-    m.exports = ea()(v);
+    m.exports = ea()(h);
     const { formatters: l } = m.exports;
     l.j = function(t) {
       try {
@@ -3640,7 +3639,7 @@ var Si;
 function ee() {
   if (Si) return se;
   Si = 1, Object.defineProperty(se, "__esModule", { value: !0 }), se.Transport = void 0;
-  const m = B, v = Oe(), b = Xn(), h = (0, L().default)("engine:transport");
+  const m = B, h = Oe(), b = Xn(), v = (0, L().default)("engine:transport");
   function d() {
   }
   class c extends m.EventEmitter {
@@ -3648,7 +3647,7 @@ function ee() {
       return this._readyState;
     }
     set readyState(t) {
-      h("readyState updated from %s to %s (%s)", this._readyState, t, this.name), this._readyState = t;
+      v("readyState updated from %s to %s (%s)", this._readyState, t, this.name), this._readyState = t;
     }
     /**
      * Transport constructor.
@@ -3656,7 +3655,7 @@ function ee() {
      * @param {EngineRequest} req
      */
     constructor(t) {
-      super(), this.writable = !1, this._readyState = "open", this.discarded = !1, this.protocol = t._query.EIO === "4" ? 4 : 3, this.parser = this.protocol === 4 ? v : b, this.supportsBinary = !(t._query && t._query.b64);
+      super(), this.writable = !1, this._readyState = "open", this.discarded = !1, this.protocol = t._query.EIO === "4" ? 4 : 3, this.parser = this.protocol === 4 ? h : b, this.supportsBinary = !(t._query && t._query.b64);
     }
     /**
      * Flags the transport as discarded.
@@ -3694,7 +3693,7 @@ function ee() {
         const a = new Error(t);
         a.type = "TransportError", a.description = i, this.emit("error", a);
       } else
-        h("ignored transport error %s (%s)", t, i);
+        v("ignored transport error %s (%s)", t, i);
     }
     /**
      * Called with parsed out a packets from the data stream.
@@ -3726,12 +3725,12 @@ function ee() {
   return se.Transport = c, se;
 }
 var Ai;
-function Cn() {
+function wn() {
   if (Ai) return ae;
   Ai = 1, Object.defineProperty(ae, "__esModule", { value: !0 }), ae.Polling = void 0;
-  const m = ee(), v = B, b = ai(), h = (0, L().default)("engine:polling"), d = {
-    gzip: v.createGzip,
-    deflate: v.createDeflate
+  const m = ee(), h = B, b = ai(), v = (0, L().default)("engine:polling"), d = {
+    gzip: h.createGzip,
+    deflate: h.createDeflate
   };
   class c extends m.Transport {
     /**
@@ -3763,16 +3762,16 @@ function Cn() {
      */
     onPollRequest(t, i) {
       if (this.req) {
-        h("request overlap"), this.onError("overlap from client"), i.writeHead(400), i.end();
+        v("request overlap"), this.onError("overlap from client"), i.writeHead(400), i.end();
         return;
       }
-      h("setting request"), this.req = t, this.res = i;
+      v("setting request"), this.req = t, this.res = i;
       const a = () => {
         this.onError("poll connection closed prematurely");
       }, e = () => {
         t.removeListener("close", a), this.req = this.res = null;
       };
-      t.cleanup = e, t.on("close", a), this.writable = !0, this.emit("ready"), this.writable && this.shouldClose && (h("triggering empty send to append close packet"), this.send([{ type: "noop" }]));
+      t.cleanup = e, t.on("close", a), this.writable = !0, this.emit("ready"), this.writable && this.shouldClose && (v("triggering empty send to append close packet"), this.send([{ type: "noop" }]));
     }
     /**
      * The client sends a request with data.
@@ -3815,10 +3814,10 @@ function Cn() {
      * @protected
      */
     onData(t) {
-      h('received "%s"', t);
+      v('received "%s"', t);
       const i = (a) => {
         if (a.type === "close")
-          return h("got xhr close packet"), this.onClose(), !1;
+          return v("got xhr close packet"), this.onClose(), !1;
         this.onPacket(a);
       };
       this.protocol === 3 ? this.parser.decodePayload(t, i) : this.parser.decodePayload(t).forEach(i);
@@ -3832,7 +3831,7 @@ function Cn() {
       this.writable && this.send([{ type: "noop" }]), super.onClose();
     }
     send(t) {
-      this.writable = !1, this.shouldClose && (h("appending close packet to payload"), t.push({ type: "close" }), this.shouldClose(), this.shouldClose = null);
+      this.writable = !1, this.shouldClose && (v("appending close packet to payload"), t.push({ type: "close" }), this.shouldClose(), this.shouldClose = null);
       const i = (a) => {
         const e = t.some((n) => n.options && n.options.compress);
         this.write(a, { compress: e });
@@ -3847,7 +3846,7 @@ function Cn() {
      * @private
      */
     write(t, i) {
-      h('writing "%s"', t), this.doWrite(t, i, () => {
+      v('writing "%s"', t), this.doWrite(t, i, () => {
         this.req.cleanup(), this.emit("drain");
       });
     }
@@ -3889,7 +3888,7 @@ function Cn() {
      * @private
      */
     compress(t, i, a) {
-      h("compressing");
+      v("compressing");
       const e = [];
       let n = 0;
       d[i](this.httpCompression).on("error", a).on("data", function(o) {
@@ -3904,13 +3903,13 @@ function Cn() {
      * @private
      */
     doClose(t) {
-      h("closing");
+      v("closing");
       let i;
-      this.dataReq && (h("aborting ongoing data request"), this.dataReq.destroy());
+      this.dataReq && (v("aborting ongoing data request"), this.dataReq.destroy());
       const a = () => {
         clearTimeout(i), t(), this.onClose();
       };
-      this.writable ? (h("transport writable - closing right away"), this.send([{ type: "close" }]), a()) : this.discarded ? (h("transport discarded - closing right away"), a()) : (h("transport not writable - buffering orderly close"), this.shouldClose = a, i = setTimeout(a, this.closeTimeout));
+      this.writable ? (v("transport writable - closing right away"), this.send([{ type: "close" }]), a()) : this.discarded ? (v("transport discarded - closing right away"), a()) : (v("transport not writable - buffering orderly close"), this.shouldClose = a, i = setTimeout(a, this.closeTimeout));
     }
     /**
      * Returns headers for a response.
@@ -3930,8 +3929,8 @@ var oe = {}, Ti;
 function ia() {
   if (Ti) return oe;
   Ti = 1, Object.defineProperty(oe, "__esModule", { value: !0 }), oe.JSONP = void 0;
-  const m = Cn(), v = B, b = /\\\\n/g, p = /(\\)?\\n/g;
-  class h extends m.Polling {
+  const m = wn(), h = B, b = /\\\\n/g, p = /(\\)?\\n/g;
+  class v extends m.Polling {
     /**
      * JSON-P polling transport.
      */
@@ -3939,7 +3938,7 @@ function ia() {
       super(c), this.head = "___eio[" + (c._query.j || "").replace(/[^0-9]/g, "") + "](", this.foot = ");";
     }
     onData(c) {
-      c = v.parse(c).d, typeof c == "string" && (c = c.replace(p, function(l, t) {
+      c = h.parse(c).d, typeof c == "string" && (c = c.replace(p, function(l, t) {
         return t ? l : `
 `;
       }), super.onData(c.replace(b, "\\n")));
@@ -3949,7 +3948,7 @@ function ia() {
       c = this.head + i + this.foot, super.doWrite(c, l, t);
     }
   }
-  return oe.JSONP = h, oe;
+  return oe.JSONP = v, oe;
 }
 var re = {}, Fi;
 function na() {
@@ -4016,11 +4015,11 @@ function na() {
   return re.WebSocket = p, re;
 }
 var ce = {}, Ri;
-function kn() {
+function Cn() {
   if (Ri) return ce;
   Ri = 1, Object.defineProperty(ce, "__esModule", { value: !0 }), ce.WebTransport = void 0;
-  const m = ee(), v = L(), b = Oe(), p = (0, v.default)("engine:webtransport");
-  class h extends m.Transport {
+  const m = ee(), h = L(), b = Oe(), p = (0, h.default)("engine:webtransport");
+  class v extends m.Transport {
     constructor(c, l, t) {
       super({ _query: { EIO: "4" } }), this.session = c;
       const i = (0, b.createPacketEncoderStream)();
@@ -4060,29 +4059,29 @@ function kn() {
       p("closing WebTransport session"), this.session.close(), c && c();
     }
   }
-  return ce.WebTransport = h, ce;
+  return ce.WebTransport = v, ce;
 }
 var ji;
-function _n() {
+function kn() {
   if (ji) return _e;
   ji = 1, Object.defineProperty(_e, "__esModule", { value: !0 });
-  const m = Cn(), v = ia(), b = na(), p = kn();
+  const m = wn(), h = ia(), b = na(), p = Cn();
   _e.default = {
-    polling: h,
+    polling: v,
     websocket: b.WebSocket,
     webtransport: p.WebTransport
   };
-  function h(d) {
-    return typeof d._query.j == "string" ? new v.JSONP(d) : new m.Polling(d);
+  function v(d) {
+    return typeof d._query.j == "string" ? new h.JSONP(d) : new m.Polling(d);
   }
-  return h.upgradesTo = ["websocket", "webtransport"], _e;
+  return v.upgradesTo = ["websocket", "webtransport"], _e;
 }
 var pe = {}, Oi;
-function En() {
+function _n() {
   if (Oi) return pe;
   Oi = 1, Object.defineProperty(pe, "__esModule", { value: !0 }), pe.Socket = void 0;
-  const m = B, v = L(), b = B, p = (0, v.default)("engine:socket");
-  class h extends m.EventEmitter {
+  const m = B, h = L(), b = B, p = (0, h.default)("engine:socket");
+  class v extends m.EventEmitter {
     get readyState() {
       return this._readyState;
     }
@@ -4343,7 +4342,7 @@ function En() {
       p("closing the transport (discard? %s)", !!c), c && this.transport.discard(), this.transport.close(this.onClose.bind(this, "forced close"));
     }
   }
-  return pe.Socket = h, pe;
+  return pe.Socket = v, pe;
 }
 var Se = {};
 /*!
@@ -4356,7 +4355,7 @@ var Pi;
 function aa() {
   if (Pi) return Se;
   Pi = 1, Se.parse = c, Se.serialize = i;
-  var m = Object.prototype.toString, v = Object.prototype.hasOwnProperty, b = /^[!#$%&'*+\-.^_`|~0-9A-Za-z]+$/, p = /^("?)[\u0021\u0023-\u002B\u002D-\u003A\u003C-\u005B\u005D-\u007E]*\1$/, h = /^([.]?[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)([.][a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)*$/i, d = /^[\u0020-\u003A\u003D-\u007E]*$/;
+  var m = Object.prototype.toString, h = Object.prototype.hasOwnProperty, b = /^[!#$%&'*+\-.^_`|~0-9A-Za-z]+$/, p = /^("?)[\u0021\u0023-\u002B\u002D-\u003A\u003C-\u005B\u005D-\u007E]*\1$/, v = /^([.]?[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)([.][a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)*$/i, d = /^[\u0020-\u003A\u003D-\u007E]*$/;
   function c(o, s) {
     if (typeof o != "string")
       throw new TypeError("argument str must be a string");
@@ -4372,7 +4371,7 @@ function aa() {
         continue;
       }
       var E = l(o, g, k), x = t(o, k, E), w = o.slice(E, x);
-      if (!v.call(r, w)) {
+      if (!h.call(r, w)) {
         var C = l(o, k + 1, T), _ = t(o, T, C);
         o.charCodeAt(C) === 34 && o.charCodeAt(_ - 1) === 34 && (C++, _--);
         var F = o.slice(C, _);
@@ -4414,7 +4413,7 @@ function aa() {
       g += "; Max-Age=" + k;
     }
     if (r.domain) {
-      if (!h.test(r.domain))
+      if (!v.test(r.domain))
         throw new TypeError("option domain is invalid");
       g += "; Domain=" + r.domain;
     }
@@ -4499,13 +4498,13 @@ var Ke, Bi;
 function ta() {
   if (Bi) return Ke;
   Bi = 1;
-  var m = Object.getOwnPropertySymbols, v = Object.prototype.hasOwnProperty, b = Object.prototype.propertyIsEnumerable;
+  var m = Object.getOwnPropertySymbols, h = Object.prototype.hasOwnProperty, b = Object.prototype.propertyIsEnumerable;
   function p(d) {
     if (d == null)
       throw new TypeError("Object.assign cannot be called with null or undefined");
     return Object(d);
   }
-  function h() {
+  function v() {
     try {
       if (!Object.assign)
         return !1;
@@ -4527,11 +4526,11 @@ function ta() {
       return !1;
     }
   }
-  return Ke = h() ? Object.assign : function(d, c) {
+  return Ke = v() ? Object.assign : function(d, c) {
     for (var l, t = p(d), i, a = 1; a < arguments.length; a++) {
       l = Object(arguments[a]);
       for (var e in l)
-        v.call(l, e) && (t[e] = l[e]);
+        h.call(l, e) && (t[e] = l[e]);
       if (m) {
         i = m(l);
         for (var n = 0; n < i.length; n++)
@@ -4550,19 +4549,19 @@ var Ae = { exports: {} };
 var Ni;
 function oa() {
   if (Ni) return Ae.exports;
-  Ni = 1, Ae.exports = p, Ae.exports.append = v;
+  Ni = 1, Ae.exports = p, Ae.exports.append = h;
   var m = /^[!#$%&'*+\-.^_`|~0-9A-Za-z]+$/;
-  function v(h, d) {
-    if (typeof h != "string")
+  function h(v, d) {
+    if (typeof v != "string")
       throw new TypeError("header argument is required");
     if (!d)
       throw new TypeError("field argument is required");
     for (var c = Array.isArray(d) ? d : b(String(d)), l = 0; l < c.length; l++)
       if (!m.test(c[l]))
         throw new TypeError("field argument contains an invalid header name");
-    if (h === "*")
-      return h;
-    var t = h, i = b(h.toLowerCase());
+    if (v === "*")
+      return v;
+    var t = v, i = b(v.toLowerCase());
     if (c.indexOf("*") !== -1 || i.indexOf("*") !== -1)
       return "*";
     for (var a = 0; a < c.length; a++) {
@@ -4571,33 +4570,33 @@ function oa() {
     }
     return t;
   }
-  function b(h) {
-    for (var d = 0, c = [], l = 0, t = 0, i = h.length; t < i; t++)
-      switch (h.charCodeAt(t)) {
+  function b(v) {
+    for (var d = 0, c = [], l = 0, t = 0, i = v.length; t < i; t++)
+      switch (v.charCodeAt(t)) {
         case 32:
           l === d && (l = d = t + 1);
           break;
         case 44:
-          c.push(h.substring(l, d)), l = d = t + 1;
+          c.push(v.substring(l, d)), l = d = t + 1;
           break;
         default:
           d = t + 1;
           break;
       }
-    return c.push(h.substring(l, d)), c;
+    return c.push(v.substring(l, d)), c;
   }
-  function p(h, d) {
-    if (!h || !h.getHeader || !h.setHeader)
+  function p(v, d) {
+    if (!v || !v.getHeader || !v.setHeader)
       throw new TypeError("res argument is required");
-    var c = h.getHeader("Vary") || "", l = Array.isArray(c) ? c.join(", ") : String(c);
-    (c = v(l, d)) && h.setHeader("Vary", c);
+    var c = v.getHeader("Vary") || "", l = Array.isArray(c) ? c.join(", ") : String(c);
+    (c = h(l, d)) && v.setHeader("Vary", c);
   }
   return Ae.exports;
 }
 var Ii;
-function Sn() {
+function En() {
   return Ii || (Ii = 1, function() {
-    var m = ta(), v = oa(), b = {
+    var m = ta(), h = oa(), b = {
       origin: "*",
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
       preflightContinue: !1,
@@ -4606,10 +4605,10 @@ function Sn() {
     function p(s) {
       return typeof s == "string" || s instanceof String;
     }
-    function h(s, r) {
+    function v(s, r) {
       if (Array.isArray(r)) {
         for (var u = 0; u < r.length; ++u)
-          if (h(s, r[u]))
+          if (v(s, r[u]))
             return !0;
         return !1;
       } else return p(r) ? s === r : r instanceof RegExp ? r.test(s) : !!r;
@@ -4625,7 +4624,7 @@ function Sn() {
       }]), f.push([{
         key: "Vary",
         value: "Origin"
-      }])) : (g = h(u, s.origin), f.push([{
+      }])) : (g = v(u, s.origin), f.push([{
         key: "Access-Control-Allow-Origin",
         value: g ? u : !1
       }]), f.push([{
@@ -4676,7 +4675,7 @@ function Sn() {
     function e(s, r) {
       for (var u = 0, f = s.length; u < f; u++) {
         var g = s[u];
-        g && (Array.isArray(g) ? e(g, r) : g.key === "Vary" && g.value ? v(r, g.value) : g.value && r.setHeader(g.key, g.value));
+        g && (Array.isArray(g) ? e(g, r) : g.key === "Vary" && g.value ? h(r, g.value) : g.value && r.setHeader(g.key, g.value));
       }
     }
     function n(s, r, u, f) {
@@ -4706,10 +4705,10 @@ function Sn() {
   }()), We.exports;
 }
 var Di;
-function An() {
+function Sn() {
   if (Di) return V;
   Di = 1, Object.defineProperty(V, "__esModule", { value: !0 }), V.Server = V.BaseServer = void 0;
-  const m = B, v = B, b = wn(), p = _n(), h = B, d = En(), c = L(), l = aa(), t = sa(), i = kn(), a = Oe(), e = (0, c.default)("engine"), n = Symbol("responseHeaders");
+  const m = B, h = B, b = yn(), p = kn(), v = B, d = _n(), c = L(), l = aa(), t = sa(), i = Cn(), a = Oe(), e = (0, c.default)("engine"), n = Symbol("responseHeaders");
   function o(E) {
     try {
       const x = JSON.parse(E);
@@ -4718,7 +4717,7 @@ function An() {
     } catch {
     }
   }
-  class s extends h.EventEmitter {
+  class s extends v.EventEmitter {
     /**
      * Server constructor.
      *
@@ -4745,7 +4744,7 @@ function An() {
         // @ts-ignore
         httpOnly: x.cookie.path !== !1,
         sameSite: "lax"
-      }, x.cookie)), this.opts.cors && this.use(Sn()(this.opts.cors)), x.perMessageDeflate && (this.opts.perMessageDeflate = Object.assign({
+      }, x.cookie)), this.opts.cors && this.use(En()(this.opts.cors)), x.perMessageDeflate && (this.opts.perMessageDeflate = Object.assign({
         threshold: 1024
       }, x.perMessageDeflate)), this.init();
     }
@@ -5031,7 +5030,7 @@ function An() {
      * @private
      */
     prepare(x) {
-      x._query || (x._query = ~x.url.indexOf("?") ? m.parse((0, v.parse)(x.url).query) : {});
+      x._query || (x._query = ~x.url.indexOf("?") ? m.parse((0, h.parse)(x.url).query) : {});
     }
     createTransport(x, w) {
       return new p.default[x](w);
@@ -5471,9 +5470,9 @@ var le = {}, Te = {}, ue = {}, Mi;
 function ra() {
   if (Mi) return ue;
   Mi = 1, Object.defineProperty(ue, "__esModule", { value: !0 }), ue.Polling = void 0;
-  const m = ee(), v = B, b = ai(), h = (0, L().default)("engine:polling"), d = {
-    gzip: v.createGzip,
-    deflate: v.createDeflate
+  const m = ee(), h = B, b = ai(), v = (0, L().default)("engine:polling"), d = {
+    gzip: h.createGzip,
+    deflate: h.createDeflate
   };
   class c extends m.Transport {
     /**
@@ -5506,16 +5505,16 @@ function ra() {
      */
     onPollRequest(t, i) {
       if (this.req) {
-        h("request overlap"), this.onError("overlap from client"), i.writeStatus("500 Internal Server Error"), i.end();
+        v("request overlap"), this.onError("overlap from client"), i.writeStatus("500 Internal Server Error"), i.end();
         return;
       }
-      h("setting request"), this.req = t, this.res = i;
+      v("setting request"), this.req = t, this.res = i;
       const a = () => {
         this.writable = !1, this.onError("poll connection closed prematurely");
       }, e = () => {
         this.req = this.res = null;
       };
-      t.cleanup = e, i.onAborted(a), this.writable = !0, this.emit("ready"), this.writable && this.shouldClose && (h("triggering empty send to append close packet"), this.send([{ type: "noop" }]));
+      t.cleanup = e, i.onAborted(a), this.writable = !0, this.emit("ready"), this.writable && this.shouldClose && (v("triggering empty send to append close packet"), this.send([{ type: "noop" }]));
     }
     /**
      * The client sends a request with data.
@@ -5594,10 +5593,10 @@ function ra() {
      * @private
      */
     onData(t) {
-      h('received "%s"', t);
+      v('received "%s"', t);
       const i = (a) => {
         if (a.type === "close")
-          return h("got xhr close packet"), this.onClose(), !1;
+          return v("got xhr close packet"), this.onClose(), !1;
         this.onPacket(a);
       };
       this.protocol === 3 ? this.parser.decodePayload(t, i) : this.parser.decodePayload(t).forEach(i);
@@ -5617,7 +5616,7 @@ function ra() {
      * @private
      */
     send(t) {
-      this.writable = !1, this.shouldClose && (h("appending close packet to payload"), t.push({ type: "close" }), this.shouldClose(), this.shouldClose = null);
+      this.writable = !1, this.shouldClose && (v("appending close packet to payload"), t.push({ type: "close" }), this.shouldClose(), this.shouldClose = null);
       const i = (a) => {
         const e = t.some((n) => n.options && n.options.compress);
         this.write(a, { compress: e });
@@ -5632,7 +5631,7 @@ function ra() {
      * @private
      */
     write(t, i) {
-      h('writing "%s"', t), this.doWrite(t, i, () => {
+      v('writing "%s"', t), this.doWrite(t, i, () => {
         this.req.cleanup(), this.emit("drain");
       });
     }
@@ -5678,7 +5677,7 @@ function ra() {
      * @private
      */
     compress(t, i, a) {
-      h("compressing");
+      v("compressing");
       const e = [];
       let n = 0;
       d[i](this.httpCompression).on("error", a).on("data", function(o) {
@@ -5693,12 +5692,12 @@ function ra() {
      * @private
      */
     doClose(t) {
-      h("closing");
+      v("closing");
       let i;
       const a = () => {
         clearTimeout(i), t(), this.onClose();
       };
-      this.writable ? (h("transport writable - closing right away"), this.send([{ type: "close" }]), a()) : this.discarded ? (h("transport discarded - closing right away"), a()) : (h("transport not writable - buffering orderly close"), this.shouldClose = a, i = setTimeout(a, this.closeTimeout));
+      this.writable ? (v("transport writable - closing right away"), this.send([{ type: "close" }]), a()) : this.discarded ? (v("transport discarded - closing right away"), a()) : (v("transport not writable - buffering orderly close"), this.shouldClose = a, i = setTimeout(a, this.closeTimeout));
     }
     /**
      * Returns headers for a response.
@@ -5772,18 +5771,18 @@ var Li;
 function pa() {
   if (Li) return Te;
   Li = 1, Object.defineProperty(Te, "__esModule", { value: !0 });
-  const m = ra(), v = ca();
+  const m = ra(), h = ca();
   return Te.default = {
     polling: m.Polling,
-    websocket: v.WebSocket
+    websocket: h.WebSocket
   }, Te;
 }
 var Ui;
 function la() {
   if (Ui) return le;
   Ui = 1, Object.defineProperty(le, "__esModule", { value: !0 }), le.uServer = void 0;
-  const m = L(), v = An(), b = pa(), p = (0, m.default)("engine:uws");
-  class h extends v.BaseServer {
+  const m = L(), h = Sn(), b = pa(), p = (0, m.default)("engine:uws");
+  class v extends h.BaseServer {
     init() {
     }
     cleanup() {
@@ -5846,7 +5845,7 @@ function la() {
           this.emit("connection_error", {
             req: t,
             code: a,
-            message: v.Server.errorMessages[a],
+            message: h.Server.errorMessages[a],
             context: e
           }), this.abortRequest(t.res, a, e);
           return;
@@ -5859,7 +5858,7 @@ function la() {
         }
       };
       this._applyMiddlewares(t, l, (a) => {
-        a ? i(v.Server.errors.BAD_REQUEST, { name: "MIDDLEWARE_FAILURE" }) : this.verify(t, !1, i);
+        a ? i(h.Server.errors.BAD_REQUEST, { name: "MIDDLEWARE_FAILURE" }) : this.verify(t, !1, i);
       });
     }
     handleUpgrade(l, t, i) {
@@ -5869,7 +5868,7 @@ function la() {
           this.emit("connection_error", {
             req: t,
             code: e,
-            message: v.Server.errorMessages[e],
+            message: h.Server.errorMessages[e],
             context: n
           }), this.abortRequest(l, e, n);
           return;
@@ -5892,18 +5891,18 @@ function la() {
         }, t.getHeader("sec-websocket-key"), t.getHeader("sec-websocket-protocol"), t.getHeader("sec-websocket-extensions"), i);
       };
       this._applyMiddlewares(t, l, (e) => {
-        e ? a(v.Server.errors.BAD_REQUEST, { name: "MIDDLEWARE_FAILURE" }) : this.verify(t, !0, a);
+        e ? a(h.Server.errors.BAD_REQUEST, { name: "MIDDLEWARE_FAILURE" }) : this.verify(t, !0, a);
       });
     }
     abortRequest(l, t, i) {
-      const a = t === v.Server.errors.FORBIDDEN ? "403 Forbidden" : "400 Bad Request", e = i && i.message ? i.message : v.Server.errorMessages[t];
+      const a = t === h.Server.errors.FORBIDDEN ? "403 Forbidden" : "400 Bad Request", e = i && i.message ? i.message : h.Server.errorMessages[t];
       l.writeStatus(a), l.writeHeader("Content-Type", "application/json"), l.end(JSON.stringify({
         code: t,
         message: e
       }));
     }
   }
-  le.uServer = h;
+  le.uServer = v;
   class d {
     constructor(l) {
       this.res = l, this.statusWritten = !1, this.headers = [], this.isAborted = !1;
@@ -5959,29 +5958,29 @@ var $i;
 function ua() {
   return $i || ($i = 1, function(m) {
     Object.defineProperty(m, "__esModule", { value: !0 }), m.protocol = m.Transport = m.Socket = m.uServer = m.parser = m.transports = m.Server = void 0, m.listen = t, m.attach = i;
-    const v = B, b = An();
+    const h = B, b = Sn();
     Object.defineProperty(m, "Server", { enumerable: !0, get: function() {
       return b.Server;
     } });
-    const p = _n();
+    const p = kn();
     m.transports = p.default;
-    const h = Oe();
-    m.parser = h;
+    const v = Oe();
+    m.parser = v;
     var d = la();
     Object.defineProperty(m, "uServer", { enumerable: !0, get: function() {
       return d.uServer;
     } });
-    var c = En();
+    var c = _n();
     Object.defineProperty(m, "Socket", { enumerable: !0, get: function() {
       return c.Socket;
     } });
     var l = ee();
     Object.defineProperty(m, "Transport", { enumerable: !0, get: function() {
       return l.Transport;
-    } }), m.protocol = h.protocol;
+    } }), m.protocol = v.protocol;
     function t(a, e, n) {
       typeof e == "function" && (n = e, e = {});
-      const o = (0, v.createServer)(function(r, u) {
+      const o = (0, h.createServer)(function(r, u) {
         u.writeHead(501), u.end("Not Implemented");
       }), s = i(o, e);
       return s.httpServer = o, o.listen(a, n), s;
@@ -5997,41 +5996,41 @@ function I(m) {
   if (m) return da(m);
 }
 function da(m) {
-  for (var v in I.prototype)
-    m[v] = I.prototype[v];
+  for (var h in I.prototype)
+    m[h] = I.prototype[h];
   return m;
 }
-I.prototype.on = I.prototype.addEventListener = function(m, v) {
-  return this._callbacks = this._callbacks || {}, (this._callbacks["$" + m] = this._callbacks["$" + m] || []).push(v), this;
+I.prototype.on = I.prototype.addEventListener = function(m, h) {
+  return this._callbacks = this._callbacks || {}, (this._callbacks["$" + m] = this._callbacks["$" + m] || []).push(h), this;
 };
-I.prototype.once = function(m, v) {
+I.prototype.once = function(m, h) {
   function b() {
-    this.off(m, b), v.apply(this, arguments);
+    this.off(m, b), h.apply(this, arguments);
   }
-  return b.fn = v, this.on(m, b), this;
+  return b.fn = h, this.on(m, b), this;
 };
-I.prototype.off = I.prototype.removeListener = I.prototype.removeAllListeners = I.prototype.removeEventListener = function(m, v) {
+I.prototype.off = I.prototype.removeListener = I.prototype.removeAllListeners = I.prototype.removeEventListener = function(m, h) {
   if (this._callbacks = this._callbacks || {}, arguments.length == 0)
     return this._callbacks = {}, this;
   var b = this._callbacks["$" + m];
   if (!b) return this;
   if (arguments.length == 1)
     return delete this._callbacks["$" + m], this;
-  for (var p, h = 0; h < b.length; h++)
-    if (p = b[h], p === v || p.fn === v) {
-      b.splice(h, 1);
+  for (var p, v = 0; v < b.length; v++)
+    if (p = b[v], p === h || p.fn === h) {
+      b.splice(v, 1);
       break;
     }
   return b.length === 0 && delete this._callbacks["$" + m], this;
 };
 I.prototype.emit = function(m) {
   this._callbacks = this._callbacks || {};
-  for (var v = new Array(arguments.length - 1), b = this._callbacks["$" + m], p = 1; p < arguments.length; p++)
-    v[p - 1] = arguments[p];
+  for (var h = new Array(arguments.length - 1), b = this._callbacks["$" + m], p = 1; p < arguments.length; p++)
+    h[p - 1] = arguments[p];
   if (b) {
     b = b.slice(0);
-    for (var p = 0, h = b.length; p < h; ++p)
-      b[p].apply(this, v);
+    for (var p = 0, v = b.length; p < v; ++p)
+      b[p].apply(this, h);
   }
   return this;
 };
@@ -6045,14 +6044,14 @@ I.prototype.hasListeners = function(m) {
 const ma = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Emitter: I
-}, Symbol.toStringTag, { value: "Module" })), fa = /* @__PURE__ */ yn(ma);
+}, Symbol.toStringTag, { value: "Module" })), fa = /* @__PURE__ */ gn(ma);
 var K = {}, J = {}, Hi;
-function Tn() {
+function An() {
   if (Hi) return J;
   Hi = 1, Object.defineProperty(J, "__esModule", { value: !0 }), J.hasBinary = J.isBinary = void 0;
-  const m = typeof ArrayBuffer == "function", v = (l) => typeof ArrayBuffer.isView == "function" ? ArrayBuffer.isView(l) : l.buffer instanceof ArrayBuffer, b = Object.prototype.toString, p = typeof Blob == "function" || typeof Blob < "u" && b.call(Blob) === "[object BlobConstructor]", h = typeof File == "function" || typeof File < "u" && b.call(File) === "[object FileConstructor]";
+  const m = typeof ArrayBuffer == "function", h = (l) => typeof ArrayBuffer.isView == "function" ? ArrayBuffer.isView(l) : l.buffer instanceof ArrayBuffer, b = Object.prototype.toString, p = typeof Blob == "function" || typeof Blob < "u" && b.call(Blob) === "[object BlobConstructor]", v = typeof File == "function" || typeof File < "u" && b.call(File) === "[object FileConstructor]";
   function d(l) {
-    return m && (l instanceof ArrayBuffer || v(l)) || p && l instanceof Blob || h && l instanceof File;
+    return m && (l instanceof ArrayBuffer || h(l)) || p && l instanceof Blob || v && l instanceof File;
   }
   J.isBinary = d;
   function c(l, t) {
@@ -6079,12 +6078,12 @@ var Vi;
 function ha() {
   if (Vi) return K;
   Vi = 1, Object.defineProperty(K, "__esModule", { value: !0 }), K.reconstructPacket = K.deconstructPacket = void 0;
-  const m = Tn();
-  function v(d) {
+  const m = An();
+  function h(d) {
     const c = [], l = d.data, t = d;
     return t.data = b(l, c), t.attachments = c.length, { packet: t, buffers: c };
   }
-  K.deconstructPacket = v;
+  K.deconstructPacket = h;
   function b(d, c) {
     if (!d)
       return d;
@@ -6105,10 +6104,10 @@ function ha() {
     return d;
   }
   function p(d, c) {
-    return d.data = h(d.data, c), delete d.attachments, d;
+    return d.data = v(d.data, c), delete d.attachments, d;
   }
   K.reconstructPacket = p;
-  function h(d, c) {
+  function v(d, c) {
     if (!d)
       return d;
     if (d && d._placeholder === !0) {
@@ -6117,10 +6116,10 @@ function ha() {
       throw new Error("illegal attachments");
     } else if (Array.isArray(d))
       for (let l = 0; l < d.length; l++)
-        d[l] = h(d[l], c);
+        d[l] = v(d[l], c);
     else if (typeof d == "object")
       for (const l in d)
-        Object.prototype.hasOwnProperty.call(d, l) && (d[l] = h(d[l], c));
+        Object.prototype.hasOwnProperty.call(d, l) && (d[l] = v(d[l], c));
     return d;
   }
   return K;
@@ -6129,7 +6128,7 @@ var Fe = { exports: {} }, Ye, Wi;
 function va() {
   if (Wi) return Ye;
   Wi = 1;
-  var m = 1e3, v = m * 60, b = v * 60, p = b * 24, h = p * 7, d = p * 365.25;
+  var m = 1e3, h = m * 60, b = h * 60, p = b * 24, v = p * 7, d = p * 365.25;
   Ye = function(a, e) {
     e = e || {};
     var n = typeof a;
@@ -6158,7 +6157,7 @@ function va() {
           case "weeks":
           case "week":
           case "w":
-            return n * h;
+            return n * v;
           case "days":
           case "day":
           case "d":
@@ -6174,7 +6173,7 @@ function va() {
           case "mins":
           case "min":
           case "m":
-            return n * v;
+            return n * h;
           case "seconds":
           case "second":
           case "secs":
@@ -6195,11 +6194,11 @@ function va() {
   }
   function l(a) {
     var e = Math.abs(a);
-    return e >= p ? Math.round(a / p) + "d" : e >= b ? Math.round(a / b) + "h" : e >= v ? Math.round(a / v) + "m" : e >= m ? Math.round(a / m) + "s" : a + "ms";
+    return e >= p ? Math.round(a / p) + "d" : e >= b ? Math.round(a / b) + "h" : e >= h ? Math.round(a / h) + "m" : e >= m ? Math.round(a / m) + "s" : a + "ms";
   }
   function t(a) {
     var e = Math.abs(a);
-    return e >= p ? i(a, e, p, "day") : e >= b ? i(a, e, b, "hour") : e >= v ? i(a, e, v, "minute") : e >= m ? i(a, e, m, "second") : a + " ms";
+    return e >= p ? i(a, e, p, "day") : e >= b ? i(a, e, b, "hour") : e >= h ? i(a, e, h, "minute") : e >= m ? i(a, e, m, "second") : a + " ms";
   }
   function i(a, e, n, o) {
     var s = e >= n * 1.5;
@@ -6211,9 +6210,9 @@ var Qe, Ki;
 function xa() {
   if (Ki) return Qe;
   Ki = 1;
-  function m(v) {
-    p.debug = p, p.default = p, p.coerce = i, p.disable = c, p.enable = d, p.enabled = l, p.humanize = va(), p.destroy = a, Object.keys(v).forEach((e) => {
-      p[e] = v[e];
+  function m(h) {
+    p.debug = p, p.default = p, p.coerce = i, p.disable = c, p.enable = d, p.enabled = l, p.humanize = va(), p.destroy = a, Object.keys(h).forEach((e) => {
+      p[e] = h[e];
     }), p.names = [], p.skips = [], p.formatters = {};
     function b(e) {
       let n = 0;
@@ -6242,7 +6241,7 @@ function xa() {
           return w;
         }), p.formatArgs.call(g, f), (g.log || p.log).apply(g, f);
       }
-      return u.namespace = e, u.useColors = p.useColors(), u.color = p.selectColor(e), u.extend = h, u.destroy = p.destroy, Object.defineProperty(u, "enabled", {
+      return u.namespace = e, u.useColors = p.useColors(), u.color = p.selectColor(e), u.extend = v, u.destroy = p.destroy, Object.defineProperty(u, "enabled", {
         enumerable: !0,
         configurable: !1,
         get: () => o !== null ? o : (s !== p.namespaces && (s = p.namespaces, r = p.enabled(e)), r),
@@ -6251,7 +6250,7 @@ function xa() {
         }
       }), typeof p.init == "function" && p.init(u), u;
     }
-    function h(e, n) {
+    function v(e, n) {
       const o = p(this.namespace + (typeof n > "u" ? ":" : n) + e);
       return o.log = this.log, o;
     }
@@ -6296,13 +6295,13 @@ function xa() {
 }
 var Ji;
 function ga() {
-  return Ji || (Ji = 1, function(m, v) {
-    v.formatArgs = p, v.save = h, v.load = d, v.useColors = b, v.storage = c(), v.destroy = /* @__PURE__ */ (() => {
+  return Ji || (Ji = 1, function(m, h) {
+    h.formatArgs = p, h.save = v, h.load = d, h.useColors = b, h.storage = c(), h.destroy = /* @__PURE__ */ (() => {
       let t = !1;
       return () => {
         t || (t = !0, console.warn("Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`."));
       };
-    })(), v.colors = [
+    })(), h.colors = [
       "#0000CC",
       "#0000FF",
       "#0033CC",
@@ -6402,18 +6401,18 @@ function ga() {
         n !== "%%" && (a++, n === "%c" && (e = a));
       }), t.splice(e, 0, i);
     }
-    v.log = console.debug || console.log || (() => {
+    h.log = console.debug || console.log || (() => {
     });
-    function h(t) {
+    function v(t) {
       try {
-        t ? v.storage.setItem("debug", t) : v.storage.removeItem("debug");
+        t ? h.storage.setItem("debug", t) : h.storage.removeItem("debug");
       } catch {
       }
     }
     function d() {
       let t;
       try {
-        t = v.storage.getItem("debug");
+        t = h.storage.getItem("debug");
       } catch {
       }
       return !t && typeof process < "u" && "env" in process && (t = process.env.DEBUG), t;
@@ -6424,7 +6423,7 @@ function ga() {
       } catch {
       }
     }
-    m.exports = xa()(v);
+    m.exports = xa()(h);
     const { formatters: l } = m.exports;
     l.j = function(t) {
       try {
@@ -6439,7 +6438,7 @@ var Yi;
 function Pe() {
   return Yi || (Yi = 1, function(m) {
     Object.defineProperty(m, "__esModule", { value: !0 }), m.Decoder = m.Encoder = m.PacketType = m.protocol = void 0;
-    const v = fa, b = ha(), p = Tn(), d = (0, ga().default)("socket.io-parser"), c = [
+    const h = fa, b = ha(), p = An(), d = (0, ga().default)("socket.io-parser"), c = [
       "connect",
       "connect_error",
       "disconnect",
@@ -6497,7 +6496,7 @@ function Pe() {
     function i(n) {
       return Object.prototype.toString.call(n) === "[object Object]";
     }
-    class a extends v.Emitter {
+    class a extends h.Emitter {
       /**
        * Decoder constructor
        *
@@ -6642,7 +6641,7 @@ var Re = { exports: {} }, Ge, Qi;
 function ba() {
   if (Qi) return Ge;
   Qi = 1;
-  var m = 1e3, v = m * 60, b = v * 60, p = b * 24, h = p * 7, d = p * 365.25;
+  var m = 1e3, h = m * 60, b = h * 60, p = b * 24, v = p * 7, d = p * 365.25;
   Ge = function(a, e) {
     e = e || {};
     var n = typeof a;
@@ -6671,7 +6670,7 @@ function ba() {
           case "weeks":
           case "week":
           case "w":
-            return n * h;
+            return n * v;
           case "days":
           case "day":
           case "d":
@@ -6687,7 +6686,7 @@ function ba() {
           case "mins":
           case "min":
           case "m":
-            return n * v;
+            return n * h;
           case "seconds":
           case "second":
           case "secs":
@@ -6708,11 +6707,11 @@ function ba() {
   }
   function l(a) {
     var e = Math.abs(a);
-    return e >= p ? Math.round(a / p) + "d" : e >= b ? Math.round(a / b) + "h" : e >= v ? Math.round(a / v) + "m" : e >= m ? Math.round(a / m) + "s" : a + "ms";
+    return e >= p ? Math.round(a / p) + "d" : e >= b ? Math.round(a / b) + "h" : e >= h ? Math.round(a / h) + "m" : e >= m ? Math.round(a / m) + "s" : a + "ms";
   }
   function t(a) {
     var e = Math.abs(a);
-    return e >= p ? i(a, e, p, "day") : e >= b ? i(a, e, b, "hour") : e >= v ? i(a, e, v, "minute") : e >= m ? i(a, e, m, "second") : a + " ms";
+    return e >= p ? i(a, e, p, "day") : e >= b ? i(a, e, b, "hour") : e >= h ? i(a, e, h, "minute") : e >= m ? i(a, e, m, "second") : a + " ms";
   }
   function i(a, e, n, o) {
     var s = e >= n * 1.5;
@@ -6724,9 +6723,9 @@ var Xe, Gi;
 function ya() {
   if (Gi) return Xe;
   Gi = 1;
-  function m(v) {
-    p.debug = p, p.default = p, p.coerce = i, p.disable = c, p.enable = d, p.enabled = l, p.humanize = ba(), p.destroy = a, Object.keys(v).forEach((e) => {
-      p[e] = v[e];
+  function m(h) {
+    p.debug = p, p.default = p, p.coerce = i, p.disable = c, p.enable = d, p.enabled = l, p.humanize = ba(), p.destroy = a, Object.keys(h).forEach((e) => {
+      p[e] = h[e];
     }), p.names = [], p.skips = [], p.formatters = {};
     function b(e) {
       let n = 0;
@@ -6755,7 +6754,7 @@ function ya() {
           return w;
         }), p.formatArgs.call(g, f), (g.log || p.log).apply(g, f);
       }
-      return u.namespace = e, u.useColors = p.useColors(), u.color = p.selectColor(e), u.extend = h, u.destroy = p.destroy, Object.defineProperty(u, "enabled", {
+      return u.namespace = e, u.useColors = p.useColors(), u.color = p.selectColor(e), u.extend = v, u.destroy = p.destroy, Object.defineProperty(u, "enabled", {
         enumerable: !0,
         configurable: !1,
         get: () => o !== null ? o : (s !== p.namespaces && (s = p.namespaces, r = p.enabled(e)), r),
@@ -6764,7 +6763,7 @@ function ya() {
         }
       }), typeof p.init == "function" && p.init(u), u;
     }
-    function h(e, n) {
+    function v(e, n) {
       const o = p(this.namespace + (typeof n > "u" ? ":" : n) + e);
       return o.log = this.log, o;
     }
@@ -6809,13 +6808,13 @@ function ya() {
 }
 var Xi;
 function ie() {
-  return Xi || (Xi = 1, function(m, v) {
-    v.formatArgs = p, v.save = h, v.load = d, v.useColors = b, v.storage = c(), v.destroy = /* @__PURE__ */ (() => {
+  return Xi || (Xi = 1, function(m, h) {
+    h.formatArgs = p, h.save = v, h.load = d, h.useColors = b, h.storage = c(), h.destroy = /* @__PURE__ */ (() => {
       let t = !1;
       return () => {
         t || (t = !0, console.warn("Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`."));
       };
-    })(), v.colors = [
+    })(), h.colors = [
       "#0000CC",
       "#0000FF",
       "#0033CC",
@@ -6915,18 +6914,18 @@ function ie() {
         n !== "%%" && (a++, n === "%c" && (e = a));
       }), t.splice(e, 0, i);
     }
-    v.log = console.debug || console.log || (() => {
+    h.log = console.debug || console.log || (() => {
     });
-    function h(t) {
+    function v(t) {
       try {
-        t ? v.storage.setItem("debug", t) : v.storage.removeItem("debug");
+        t ? h.storage.setItem("debug", t) : h.storage.removeItem("debug");
       } catch {
       }
     }
     function d() {
       let t;
       try {
-        t = v.storage.getItem("debug");
+        t = h.storage.getItem("debug");
       } catch {
       }
       return !t && typeof process < "u" && "env" in process && (t = process.env.DEBUG), t;
@@ -6937,7 +6936,7 @@ function ie() {
       } catch {
       }
     }
-    m.exports = ya()(v);
+    m.exports = ya()(h);
     const { formatters: l } = m.exports;
     l.j = function(t) {
       try {
@@ -6952,8 +6951,8 @@ var Zi;
 function wa() {
   if (Zi) return me;
   Zi = 1, Object.defineProperty(me, "__esModule", { value: !0 }), me.Client = void 0;
-  const m = Pe(), v = ie(), b = B, p = v("socket.io:client");
-  class h {
+  const m = Pe(), h = ie(), b = B, p = h("socket.io:client");
+  class v {
     /**
      * Client constructor.
      *
@@ -7131,22 +7130,22 @@ function wa() {
       this.conn.removeListener("data", this.ondata), this.conn.removeListener("error", this.onerror), this.conn.removeListener("close", this.onclose), this.decoder.removeListener("decoded", this.ondecoded), this.connectTimeout && (clearTimeout(this.connectTimeout), this.connectTimeout = void 0);
     }
   }
-  return me.Client = h, me;
+  return me.Client = v, me;
 }
 var fe = {}, Y = {}, he = {}, en;
 function ti() {
   if (en) return he;
   en = 1, Object.defineProperty(he, "__esModule", { value: !0 }), he.StrictEventEmitter = void 0;
   const m = B;
-  class v extends m.EventEmitter {
+  class h extends m.EventEmitter {
     /**
      * Adds the `listener` function as an event listener for `ev`.
      *
      * @param ev Name of the event
      * @param listener Callback function
      */
-    on(p, h) {
-      return super.on(p, h);
+    on(p, v) {
+      return super.on(p, v);
     }
     /**
      * Adds a one-time `listener` function as an event listener for `ev`.
@@ -7154,8 +7153,8 @@ function ti() {
      * @param ev Name of the event
      * @param listener Callback function
      */
-    once(p, h) {
-      return super.once(p, h);
+    once(p, v) {
+      return super.once(p, v);
     }
     /**
      * Emits an event.
@@ -7163,8 +7162,8 @@ function ti() {
      * @param ev Name of the event
      * @param args Values to send to listeners of this event
      */
-    emit(p, ...h) {
-      return super.emit(p, ...h);
+    emit(p, ...v) {
+      return super.emit(p, ...v);
     }
     /**
      * Emits a reserved event.
@@ -7175,8 +7174,8 @@ function ti() {
      * @param ev Reserved event name
      * @param args Arguments to emit along with the event
      */
-    emitReserved(p, ...h) {
-      return super.emit(p, ...h);
+    emitReserved(p, ...v) {
+      return super.emit(p, ...v);
     }
     /**
      * Emits an event.
@@ -7188,8 +7187,8 @@ function ti() {
      * @param ev Event name
      * @param args Arguments to emit along with the event
      */
-    emitUntyped(p, ...h) {
-      return super.emit(p, ...h);
+    emitUntyped(p, ...v) {
+      return super.emit(p, ...v);
     }
     /**
      * Returns the listeners listening to an event.
@@ -7201,10 +7200,10 @@ function ti() {
       return super.listeners(p);
     }
   }
-  return he.StrictEventEmitter = v, he;
+  return he.StrictEventEmitter = h, he;
 }
 var Q = {}, ve = {}, nn;
-function Fn() {
+function Tn() {
   return nn || (nn = 1, Object.defineProperty(ve, "__esModule", { value: !0 }), ve.RESERVED_EVENTS = void 0, ve.RESERVED_EVENTS = /* @__PURE__ */ new Set([
     "connect",
     "connect_error",
@@ -7215,10 +7214,10 @@ function Fn() {
   ])), ve;
 }
 var an;
-function Rn() {
+function Fn() {
   if (an) return Q;
   an = 1, Object.defineProperty(Q, "__esModule", { value: !0 }), Q.RemoteSocket = Q.BroadcastOperator = void 0;
-  const m = Fn(), v = Pe();
+  const m = Tn(), h = Pe();
   class b {
     constructor(d, c = /* @__PURE__ */ new Set(), l = /* @__PURE__ */ new Set(), t = {}) {
       this.adapter = d, this.rooms = c, this.exceptRooms = l, this.flags = t;
@@ -7359,7 +7358,7 @@ function Rn() {
       if (m.RESERVED_EVENTS.has(d))
         throw new Error(`"${String(d)}" is a reserved event name`);
       const l = [d, ...c], t = {
-        type: v.PacketType.EVENT,
+        type: h.PacketType.EVENT,
         data: l
       };
       if (!(typeof l[l.length - 1] == "function"))
@@ -7586,14 +7585,14 @@ function Rn() {
   return Q.RemoteSocket = p, Q;
 }
 var sn;
-function jn() {
+function Rn() {
   if (sn) return Y;
   sn = 1;
   var m = Y && Y.__importDefault || function(e) {
     return e && e.__esModule ? e : { default: e };
   };
   Object.defineProperty(Y, "__esModule", { value: !0 }), Y.Socket = void 0;
-  const v = Pe(), b = m(ie()), p = ti(), h = m(wn()), d = Rn(), c = Fn(), l = (0, b.default)("socket.io:socket"), t = /* @__PURE__ */ new Set([
+  const h = Pe(), b = m(ie()), p = ti(), v = m(yn()), d = Fn(), c = Tn(), l = (0, b.default)("socket.io:socket"), t = /* @__PURE__ */ new Set([
     "transport error",
     "transport close",
     "forced close",
@@ -7615,10 +7614,10 @@ function jn() {
     constructor(n, o, s, r) {
       super(), this.nsp = n, this.client = o, this.recovered = !1, this.data = {}, this.connected = !1, this.acks = /* @__PURE__ */ new Map(), this.fns = [], this.flags = {}, this.server = n.server, this.adapter = this.nsp.adapter, r ? (this.id = r.sid, this.pid = r.pid, r.rooms.forEach((u) => this.join(u)), this.data = r.data, r.missedPackets.forEach((u) => {
         this.packet({
-          type: v.PacketType.EVENT,
+          type: h.PacketType.EVENT,
           data: u
         });
-      }), this.recovered = !0) : (o.conn.protocol === 3 ? this.id = n.name !== "/" ? n.name + "#" + o.id : o.id : this.id = h.default.generateId(), this.server._opts.connectionStateRecovery && (this.pid = h.default.generateId())), this.handshake = this.buildHandshake(s), this.on("error", i);
+      }), this.recovered = !0) : (o.conn.protocol === 3 ? this.id = n.name !== "/" ? n.name + "#" + o.id : o.id : this.id = v.default.generateId(), this.server._opts.connectionStateRecovery && (this.pid = v.default.generateId())), this.handshake = this.buildHandshake(s), this.on("error", i);
     }
     /**
      * Builds the `handshake` BC object
@@ -7663,7 +7662,7 @@ function jn() {
       if (c.RESERVED_EVENTS.has(n))
         throw new Error(`"${String(n)}" is a reserved event name`);
       const s = [n, ...o], r = {
-        type: v.PacketType.EVENT,
+        type: h.PacketType.EVENT,
         data: s
       };
       if (typeof s[s.length - 1] == "function") {
@@ -7869,8 +7868,8 @@ function jn() {
      * @private
      */
     _onconnect() {
-      l("socket connected - writing packet"), this.connected = !0, this.join(this.id), this.conn.protocol === 3 ? this.packet({ type: v.PacketType.CONNECT }) : this.packet({
-        type: v.PacketType.CONNECT,
+      l("socket connected - writing packet"), this.connected = !0, this.join(this.id), this.conn.protocol === 3 ? this.packet({ type: h.PacketType.CONNECT }) : this.packet({
+        type: h.PacketType.CONNECT,
         data: { sid: this.id, pid: this.pid }
       });
     }
@@ -7882,19 +7881,19 @@ function jn() {
      */
     _onpacket(n) {
       switch (l("got packet %j", n), n.type) {
-        case v.PacketType.EVENT:
+        case h.PacketType.EVENT:
           this.onevent(n);
           break;
-        case v.PacketType.BINARY_EVENT:
+        case h.PacketType.BINARY_EVENT:
           this.onevent(n);
           break;
-        case v.PacketType.ACK:
+        case h.PacketType.ACK:
           this.onack(n);
           break;
-        case v.PacketType.BINARY_ACK:
+        case h.PacketType.BINARY_ACK:
           this.onack(n);
           break;
-        case v.PacketType.DISCONNECT:
+        case h.PacketType.DISCONNECT:
           this.ondisconnect();
           break;
       }
@@ -7929,7 +7928,7 @@ function jn() {
         const r = Array.prototype.slice.call(arguments);
         l("sending ack %j", r), o.packet({
           id: n,
-          type: v.PacketType.ACK,
+          type: h.PacketType.ACK,
           data: r
         }), s = !0;
       };
@@ -7994,7 +7993,7 @@ function jn() {
      * @private
      */
     _error(n) {
-      this.packet({ type: v.PacketType.CONNECT_ERROR, data: n });
+      this.packet({ type: h.PacketType.CONNECT_ERROR, data: n });
     }
     /**
      * Disconnects this client.
@@ -8012,7 +8011,7 @@ function jn() {
      * @return self
      */
     disconnect(n = !1) {
-      return this.connected ? (n ? this.client._disconnect() : (this.packet({ type: v.PacketType.DISCONNECT }), this._onclose("server namespace disconnect")), this) : this;
+      return this.connected ? (n ? this.client._disconnect() : (this.packet({ type: h.PacketType.DISCONNECT }), this._onclose("server namespace disconnect")), this) : this;
     }
     /**
      * Sets the compress flag.
@@ -8354,13 +8353,13 @@ function jn() {
   return Y.Socket = a, Y;
 }
 var tn;
-function On() {
+function jn() {
   return tn || (tn = 1, function(m) {
-    var v = fe && fe.__importDefault || function(t) {
+    var h = fe && fe.__importDefault || function(t) {
       return t && t.__esModule ? t : { default: t };
     };
     Object.defineProperty(m, "__esModule", { value: !0 }), m.Namespace = m.RESERVED_EVENTS = void 0;
-    const b = jn(), p = ti(), h = v(ie()), d = Rn(), c = (0, h.default)("socket.io:namespace");
+    const b = Rn(), p = ti(), v = h(ie()), d = Fn(), c = (0, v.default)("socket.io:namespace");
     m.RESERVED_EVENTS = /* @__PURE__ */ new Set(["connect", "connection", "new_namespace"]);
     class l extends p.StrictEventEmitter {
       /**
@@ -8817,20 +8816,20 @@ var G = {}, Ze = {}, X = {}, z = {}, on;
 function Ca() {
   if (on) return z;
   on = 1, Object.defineProperty(z, "__esModule", { value: !0 }), z.yeast = z.decode = z.encode = void 0;
-  const m = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_".split(""), v = 64, b = {};
-  let p = 0, h = 0, d;
+  const m = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_".split(""), h = 64, b = {};
+  let p = 0, v = 0, d;
   function c(i) {
     let a = "";
     do
-      a = m[i % v] + a, i = Math.floor(i / v);
+      a = m[i % h] + a, i = Math.floor(i / h);
     while (i > 0);
     return a;
   }
   z.encode = c;
   function l(i) {
     let a = 0;
-    for (h = 0; h < i.length; h++)
-      a = a * v + b[i.charAt(h)];
+    for (v = 0; v < i.length; v++)
+      a = a * h + b[i.charAt(v)];
     return a;
   }
   z.decode = l;
@@ -8838,8 +8837,8 @@ function Ca() {
     const i = c(+/* @__PURE__ */ new Date());
     return i !== d ? (p = 0, d = i) : i + "." + c(p++);
   }
-  for (z.yeast = t; h < v; h++)
-    b[m[h]] = h;
+  for (z.yeast = t; v < h; v++)
+    b[m[v]] = v;
   return z;
 }
 var ei, rn;
@@ -8851,13 +8850,13 @@ function ka() {
   }), ei;
 }
 var cn;
-function Pn() {
+function On() {
   if (cn) return X;
   cn = 1;
   var m;
   Object.defineProperty(X, "__esModule", { value: !0 }), X.SessionAwareAdapter = X.Adapter = void 0;
-  const v = B, b = Ca(), p = ka(), h = typeof ((m = p == null ? void 0 : p.Sender) === null || m === void 0 ? void 0 : m.frame) == "function";
-  class d extends v.EventEmitter {
+  const h = B, b = Ca(), p = ka(), v = typeof ((m = p == null ? void 0 : p.Sender) === null || m === void 0 ? void 0 : m.frame) == "function";
+  class d extends h.EventEmitter {
     /**
      * In-memory adapter constructor.
      *
@@ -8975,7 +8974,7 @@ function Pn() {
     }
     _encode(i, a) {
       const e = this.encoder.encode(i);
-      if (h && e.length === 1 && typeof e[0] == "string") {
+      if (v && e.length === 1 && typeof e[0] == "string") {
         const n = Buffer.from("4" + e[0]);
         a.wsPreEncodedFrame = p.Sender.frame(n, {
           readOnly: !1,
@@ -9158,7 +9157,7 @@ var xe = {}, je = { exports: {} }, ii, pn;
 function _a() {
   if (pn) return ii;
   pn = 1;
-  var m = 1e3, v = m * 60, b = v * 60, p = b * 24, h = p * 7, d = p * 365.25;
+  var m = 1e3, h = m * 60, b = h * 60, p = b * 24, v = p * 7, d = p * 365.25;
   ii = function(a, e) {
     e = e || {};
     var n = typeof a;
@@ -9187,7 +9186,7 @@ function _a() {
           case "weeks":
           case "week":
           case "w":
-            return n * h;
+            return n * v;
           case "days":
           case "day":
           case "d":
@@ -9203,7 +9202,7 @@ function _a() {
           case "mins":
           case "min":
           case "m":
-            return n * v;
+            return n * h;
           case "seconds":
           case "second":
           case "secs":
@@ -9224,11 +9223,11 @@ function _a() {
   }
   function l(a) {
     var e = Math.abs(a);
-    return e >= p ? Math.round(a / p) + "d" : e >= b ? Math.round(a / b) + "h" : e >= v ? Math.round(a / v) + "m" : e >= m ? Math.round(a / m) + "s" : a + "ms";
+    return e >= p ? Math.round(a / p) + "d" : e >= b ? Math.round(a / b) + "h" : e >= h ? Math.round(a / h) + "m" : e >= m ? Math.round(a / m) + "s" : a + "ms";
   }
   function t(a) {
     var e = Math.abs(a);
-    return e >= p ? i(a, e, p, "day") : e >= b ? i(a, e, b, "hour") : e >= v ? i(a, e, v, "minute") : e >= m ? i(a, e, m, "second") : a + " ms";
+    return e >= p ? i(a, e, p, "day") : e >= b ? i(a, e, b, "hour") : e >= h ? i(a, e, h, "minute") : e >= m ? i(a, e, m, "second") : a + " ms";
   }
   function i(a, e, n, o) {
     var s = e >= n * 1.5;
@@ -9240,9 +9239,9 @@ var ni, ln;
 function Ea() {
   if (ln) return ni;
   ln = 1;
-  function m(v) {
-    p.debug = p, p.default = p, p.coerce = i, p.disable = c, p.enable = d, p.enabled = l, p.humanize = _a(), p.destroy = a, Object.keys(v).forEach((e) => {
-      p[e] = v[e];
+  function m(h) {
+    p.debug = p, p.default = p, p.coerce = i, p.disable = c, p.enable = d, p.enabled = l, p.humanize = _a(), p.destroy = a, Object.keys(h).forEach((e) => {
+      p[e] = h[e];
     }), p.names = [], p.skips = [], p.formatters = {};
     function b(e) {
       let n = 0;
@@ -9271,7 +9270,7 @@ function Ea() {
           return w;
         }), p.formatArgs.call(g, f), (g.log || p.log).apply(g, f);
       }
-      return u.namespace = e, u.useColors = p.useColors(), u.color = p.selectColor(e), u.extend = h, u.destroy = p.destroy, Object.defineProperty(u, "enabled", {
+      return u.namespace = e, u.useColors = p.useColors(), u.color = p.selectColor(e), u.extend = v, u.destroy = p.destroy, Object.defineProperty(u, "enabled", {
         enumerable: !0,
         configurable: !1,
         get: () => o !== null ? o : (s !== p.namespaces && (s = p.namespaces, r = p.enabled(e)), r),
@@ -9280,7 +9279,7 @@ function Ea() {
         }
       }), typeof p.init == "function" && p.init(u), u;
     }
-    function h(e, n) {
+    function v(e, n) {
       const o = p(this.namespace + (typeof n > "u" ? ":" : n) + e);
       return o.log = this.log, o;
     }
@@ -9325,13 +9324,13 @@ function Ea() {
 }
 var un;
 function Sa() {
-  return un || (un = 1, function(m, v) {
-    v.formatArgs = p, v.save = h, v.load = d, v.useColors = b, v.storage = c(), v.destroy = /* @__PURE__ */ (() => {
+  return un || (un = 1, function(m, h) {
+    h.formatArgs = p, h.save = v, h.load = d, h.useColors = b, h.storage = c(), h.destroy = /* @__PURE__ */ (() => {
       let t = !1;
       return () => {
         t || (t = !0, console.warn("Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`."));
       };
-    })(), v.colors = [
+    })(), h.colors = [
       "#0000CC",
       "#0000FF",
       "#0033CC",
@@ -9431,18 +9430,18 @@ function Sa() {
         n !== "%%" && (a++, n === "%c" && (e = a));
       }), t.splice(e, 0, i);
     }
-    v.log = console.debug || console.log || (() => {
+    h.log = console.debug || console.log || (() => {
     });
-    function h(t) {
+    function v(t) {
       try {
-        t ? v.storage.setItem("debug", t) : v.storage.removeItem("debug");
+        t ? h.storage.setItem("debug", t) : h.storage.removeItem("debug");
       } catch {
       }
     }
     function d() {
       let t;
       try {
-        t = v.storage.getItem("debug");
+        t = h.storage.getItem("debug");
       } catch {
       }
       return !t && typeof process < "u" && "env" in process && (t = process.env.DEBUG), t;
@@ -9453,7 +9452,7 @@ function Sa() {
       } catch {
       }
     }
-    m.exports = Ea()(v);
+    m.exports = Ea()(h);
     const { formatters: l } = m.exports;
     l.j = function(t) {
       try {
@@ -9467,7 +9466,7 @@ function Sa() {
 var dn;
 function Aa() {
   return dn || (dn = 1, function(m) {
-    var v = xe && xe.__rest || function(s, r) {
+    var h = xe && xe.__rest || function(s, r) {
       var u = {};
       for (var f in s) Object.prototype.hasOwnProperty.call(s, f) && r.indexOf(f) < 0 && (u[f] = s[f]);
       if (s != null && typeof Object.getOwnPropertySymbols == "function")
@@ -9476,9 +9475,9 @@ function Aa() {
       return u;
     };
     Object.defineProperty(m, "__esModule", { value: !0 }), m.ClusterAdapterWithHeartbeat = m.ClusterAdapter = m.MessageType = void 0;
-    const b = Pn(), p = Sa(), h = B, d = (0, p.debug)("socket.io-adapter"), c = "emitter", l = 5e3;
+    const b = On(), p = Sa(), v = B, d = (0, p.debug)("socket.io-adapter"), c = "emitter", l = 5e3;
     function t() {
-      return (0, h.randomBytes)(8).toString("hex");
+      return (0, v.randomBytes)(8).toString("hex");
     }
     var i;
     (function(s) {
@@ -9554,7 +9553,7 @@ function Aa() {
                 data: {
                   requestId: r.data.requestId,
                   sockets: f.map((g) => {
-                    const k = g.handshake, { sessionStore: T } = k, E = v(k, ["sessionStore"]);
+                    const k = g.handshake, { sessionStore: T } = k, E = h(k, ["sessionStore"]);
                     return {
                       id: g.id,
                       handshake: E,
@@ -9963,11 +9962,11 @@ var mn;
 function oi() {
   return mn || (mn = 1, function(m) {
     Object.defineProperty(m, "__esModule", { value: !0 }), m.MessageType = m.ClusterAdapterWithHeartbeat = m.ClusterAdapter = m.SessionAwareAdapter = m.Adapter = void 0;
-    var v = Pn();
+    var h = On();
     Object.defineProperty(m, "Adapter", { enumerable: !0, get: function() {
-      return v.Adapter;
+      return h.Adapter;
     } }), Object.defineProperty(m, "SessionAwareAdapter", { enumerable: !0, get: function() {
-      return v.SessionAwareAdapter;
+      return h.SessionAwareAdapter;
     } });
     var b = Aa();
     Object.defineProperty(m, "ClusterAdapter", { enumerable: !0, get: function() {
@@ -9987,8 +9986,8 @@ function Ta() {
     return l && l.__esModule ? l : { default: l };
   };
   Object.defineProperty(G, "__esModule", { value: !0 }), G.ParentNamespace = void 0;
-  const v = On(), b = oi(), h = (0, m(ie()).default)("socket.io:parent-namespace");
-  class d extends v.Namespace {
+  const h = jn(), b = oi(), v = (0, m(ie()).default)("socket.io:parent-namespace");
+  class d extends h.Namespace {
     constructor(t) {
       super(t, "/_" + d.count++), this.children = /* @__PURE__ */ new Set();
     }
@@ -10004,12 +10003,12 @@ function Ta() {
       }), !0;
     }
     createChild(t) {
-      h("creating child namespace %s", t);
-      const i = new v.Namespace(this.server, t);
+      v("creating child namespace %s", t);
+      const i = new h.Namespace(this.server, t);
       if (this._fns.forEach((a) => i.use(a)), this.listeners("connect").forEach((a) => i.on("connect", a)), this.listeners("connection").forEach((a) => i.on("connection", a)), this.children.add(i), this.server._opts.cleanupEmptyChildNamespaces) {
         const a = i._remove;
         i._remove = (e) => {
-          a.call(i, e), i.sockets.size === 0 && (h("closing child namespace %s", t), i.adapter.close(), this.server._nsps.delete(i.name), this.children.delete(i));
+          a.call(i, e), i.sockets.size === 0 && (v("closing child namespace %s", t), i.adapter.close(), this.server._nsps.delete(i.name), this.children.delete(i));
         };
       }
       return this.server._nsps.set(t, i), this.server.sockets.emitReserved("new_namespace", i), i;
@@ -10036,9 +10035,9 @@ function Fa() {
     return s && s.__esModule ? s : { default: s };
   };
   Object.defineProperty($, "__esModule", { value: !0 }), $.patchAdapter = i, $.restoreAdapter = e, $.serveFile = o;
-  const v = oi(), b = B, h = (0, m(ie()).default)("socket.io:adapter-uws"), d = "", { addAll: c, del: l, broadcast: t } = v.Adapter.prototype;
+  const h = oi(), b = B, v = (0, m(ie()).default)("socket.io:adapter-uws"), d = "", { addAll: c, del: l, broadcast: t } = h.Adapter.prototype;
   function i(s) {
-    v.Adapter.prototype.addAll = function(r, u) {
+    h.Adapter.prototype.addAll = function(r, u) {
       const f = !this.sids.has(r);
       c.call(this, r, u);
       const g = this.nsp.sockets.get(r) || this.nsp._preConnectSockets.get(r);
@@ -10052,14 +10051,14 @@ function Fa() {
           k && a(this.nsp.name, g, f, k);
         });
       }
-    }, v.Adapter.prototype.del = function(r, u) {
+    }, h.Adapter.prototype.del = function(r, u) {
       l.call(this, r, u);
       const f = this.nsp.sockets.get(r) || this.nsp._preConnectSockets.get(r);
       if (f && f.conn.transport.name === "websocket") {
         const g = f.conn.id, k = f.conn.transport.socket, T = `${this.nsp.name}${d}${u}`;
-        h("unsubscribe connection %s from topic %s", g, T), k.unsubscribe(T);
+        v("unsubscribe connection %s from topic %s", g, T), k.unsubscribe(T);
       }
-    }, v.Adapter.prototype.broadcast = function(r, u) {
+    }, h.Adapter.prototype.broadcast = function(r, u) {
       if (!(u.rooms.size <= 1 && u.except.size === 0)) {
         t.call(this, r, u);
         return;
@@ -10071,7 +10070,7 @@ function Fa() {
       };
       r.nsp = this.nsp.name;
       const T = this.encoder.encode(r), E = u.rooms.size === 0 ? this.nsp.name : `${this.nsp.name}${d}${u.rooms.keys().next().value}`;
-      h("fast publish to %s", E), T.forEach((x) => {
+      v("fast publish to %s", E), T.forEach((x) => {
         const w = typeof x != "string";
         s.publish(E, w ? x : "4" + x, w);
       }), this.apply(u, (x) => {
@@ -10081,13 +10080,13 @@ function Fa() {
   }
   function a(s, r, u, f) {
     const g = r.conn.id, k = r.conn.transport.socket;
-    u && (h("subscribe connection %s to topic %s", g, s), k.subscribe(s)), f.forEach((T) => {
+    u && (v("subscribe connection %s to topic %s", g, s), k.subscribe(s)), f.forEach((T) => {
       const E = `${s}${d}${T}`;
-      h("subscribe connection %s to topic %s", g, E), k.subscribe(E);
+      v("subscribe connection %s to topic %s", g, E), k.subscribe(E);
     });
   }
   function e() {
-    v.Adapter.prototype.addAll = c, v.Adapter.prototype.del = l, v.Adapter.prototype.broadcast = t;
+    h.Adapter.prototype.addAll = c, h.Adapter.prototype.del = l, h.Adapter.prototype.broadcast = t;
   }
   const n = (s) => {
     const { buffer: r, byteOffset: u, byteLength: f } = s;
@@ -10115,7 +10114,7 @@ const Ra = "4.8.1", ja = {
 };
 var H = ge.exports, vn;
 function Oa() {
-  return vn || (vn = 1, function(m, v) {
+  return vn || (vn = 1, function(m, h) {
     var b = H && H.__createBinding || (Object.create ? function(R, y, A, O) {
       O === void 0 && (O = A);
       var P = Object.getOwnPropertyDescriptor(y, A);
@@ -10128,7 +10127,7 @@ function Oa() {
       Object.defineProperty(R, "default", { enumerable: !0, value: y });
     } : function(R, y) {
       R.default = y;
-    }), h = H && H.__importStar || function(R) {
+    }), v = H && H.__importStar || function(R) {
       if (R && R.__esModule) return R;
       var y = {};
       if (R != null) for (var A in R) A !== "default" && Object.prototype.hasOwnProperty.call(R, A) && b(y, R, A);
@@ -10136,16 +10135,16 @@ function Oa() {
     }, d = H && H.__importDefault || function(R) {
       return R && R.__esModule ? R : { default: R };
     };
-    Object.defineProperty(v, "__esModule", { value: !0 }), v.Namespace = v.Socket = v.Server = void 0;
-    const c = B, l = B, t = B, i = ai(), a = B, e = B, n = ua(), o = wa(), s = B, r = On();
-    Object.defineProperty(v, "Namespace", { enumerable: !0, get: function() {
+    Object.defineProperty(h, "__esModule", { value: !0 }), h.Namespace = h.Socket = h.Server = void 0;
+    const c = B, l = B, t = B, i = ai(), a = B, e = B, n = ua(), o = wa(), s = B, r = jn();
+    Object.defineProperty(h, "Namespace", { enumerable: !0, get: function() {
       return r.Namespace;
     } });
-    const u = Ta(), f = oi(), g = h(Pe()), k = d(ie()), T = jn();
-    Object.defineProperty(v, "Socket", { enumerable: !0, get: function() {
+    const u = Ta(), f = oi(), g = v(Pe()), k = d(ie()), T = Rn();
+    Object.defineProperty(h, "Socket", { enumerable: !0, get: function() {
       return T.Socket;
     } });
-    const E = ti(), x = Fa(), w = d(Sn()), C = (0, k.default)("socket.io:server"), _ = ja.version, F = /\.map/;
+    const E = ti(), x = Fa(), w = d(En()), C = (0, k.default)("socket.io:server"), _ = ja.version, F = /\.map/;
     class S extends E.StrictEventEmitter {
       constructor(y, A = {}) {
         super(), this._nsps = /* @__PURE__ */ new Map(), this.parentNsps = /* @__PURE__ */ new Map(), this.parentNamespacesFromRegExp = /* @__PURE__ */ new Map(), typeof y == "object" && y instanceof Object && !y.listen && (A = y, y = void 0), this.path(A.path || "/socket.io"), this.connectTimeout(A.connectTimeout || 45e3), this.serveClient(A.serveClient !== !1), this._parser = A.parser || g, this.encoder = new this._parser.Encoder(), this.opts = A, A.connectionStateRecovery ? (A.connectionStateRecovery = Object.assign({
@@ -10243,14 +10242,14 @@ function Oa() {
             q.setYield(!0);
             return;
           }
-          const N = q.getUrl().replace(this._path, "").replace(/\?.*$/, "").replace(/^\//, ""), D = F.test(N), U = D ? "map" : "source", ne = '"' + _ + '"', Nn = "W/" + ne, qe = q.getHeader("if-none-match");
-          if (qe && (ne === qe || Nn === qe)) {
+          const N = q.getUrl().replace(this._path, "").replace(/\?.*$/, "").replace(/^\//, ""), D = F.test(N), U = D ? "map" : "source", ne = '"' + _ + '"', Bn = "W/" + ne, qe = q.getHeader("if-none-match");
+          if (qe && (ne === qe || Bn === qe)) {
             C("serve client %s 304", U), P.writeStatus("304 Not Modified"), P.end();
             return;
           }
           C("serve client %s", U), P.writeHeader("cache-control", "public, max-age=0"), P.writeHeader("content-type", "application/" + (D ? "json" : "javascript") + "; charset=utf-8"), P.writeHeader("etag", ne);
-          const In = e.join(__dirname, "../client-dist/", N);
-          (0, x.serveFile)(P, In);
+          const Nn = e.join(__dirname, "../client-dist/", N);
+          (0, x.serveFile)(P, Nn);
         }), (0, x.patchAdapter)(y);
       }
       /**
@@ -10669,7 +10668,7 @@ function Oa() {
         return this.sockets.disconnectSockets(y);
       }
     }
-    v.Server = S, Object.keys(s.EventEmitter.prototype).filter(function(R) {
+    h.Server = S, Object.keys(s.EventEmitter.prototype).filter(function(R) {
       return typeof s.EventEmitter.prototype[R] == "function";
     }).forEach(function(R) {
       S.prototype[R] = function() {
@@ -10679,13 +10678,16 @@ function Oa() {
   }(ge, ge.exports)), ge.exports;
 }
 var Pa = Oa();
-const qa = /* @__PURE__ */ Mn(Pa), { Server: Ba, Namespace: Da, Socket: Ma } = qa, qn = gn(), Bn = bn.createServer(qn), Na = new Ba(Bn), xn = process.env.PORT || 1607;
-qn.use(gn.static("public"));
-Na.on("connect", (m) => {
-  console.log("a user connected"), m.on("sendMessage", (v) => {
-    console.log("sendMessage fired"), m.broadcast.emit("answerMessage", { message: "hi as well" });
+const qa = /* @__PURE__ */ Dn(Pa), { Server: Ba, Namespace: Da, Socket: Ma } = qa, Pn = In(), qn = bn.createServer(Pn), Na = new Ba(qn);
+Pn.get("/", (m, h) => {
+  h.send("Hello from Express!");
+});
+Na.on("connection", (m) => {
+  console.log("A user connected"), m.emit("message", "Welcome to the server"), m.on("disconnect", () => {
+    console.log("A user disconnected");
   });
 });
-Bn.listen(xn, () => {
-  console.log(`listening on *:${xn}`);
+const xn = 3e3;
+qn.listen(xn, () => {
+  console.log(`Server running on http://localhost:${xn}`);
 });

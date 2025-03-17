@@ -4,11 +4,11 @@ export default ({ mode }) => ({
   // root: '',
   // base: mode === 'development' ? '/' : '/dist/',
   build: {
-    outDir: resolve(process.cwd(), 'public/dist'),
+    outDir: 'dist',
     emptyOutDir: true,
 
     lib: {
-      entry: 'src/ts/index.ts', // Entry point for Node
+      entry: 'src/index.ts', // Entry point for Node
       formats: ['es'], // CommonJS format for Node.js
     },
     rollupOptions: {
