@@ -5,11 +5,7 @@ import http from 'http'
 const app = express()
 const server = http.createServer(app)
 const io = new Server(server, {
-  cors: { origin: '*' } // Allow all origins for testing
-})
-
-app.get('/', (req, res) => {
-  res.send('Hello from Express + Socket.io')
+  cors: { origin: '*' }
 })
 
 io.on('connection', (socket) => {
