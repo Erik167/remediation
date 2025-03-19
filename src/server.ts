@@ -23,7 +23,7 @@ io.on('connection', (socket) => {
   socket.on('sendGraphic', (graphic) => {
     console.log('📡 received graphic: ', graphic)
 
-    io.emit("printGraphic", graphic)
+    socket.broadcast.emit("printGraphic", graphic)
   })
 
   socket.on('disconnect', () => {
