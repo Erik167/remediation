@@ -10,7 +10,8 @@ const server = http.createServer(app)
 const io = new Server(server, {
   cors: {
     origin: "*"
-  }
+  },
+  maxHttpBufferSize: 10e6
 })
 
 app.get('/', (req, res) => {
