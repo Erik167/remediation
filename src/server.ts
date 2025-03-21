@@ -21,10 +21,10 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
   console.log('Client connected:', socket.id)
 
-  socket.on('sendGraphic', (graphic) => {
-    console.log('📡 received graphic: ', graphic)
+  socket.on('sendJob', (job) => {
+    console.log('📡 received job: ', job)
 
-    socket.broadcast.emit("printGraphic", graphic)
+    socket.broadcast.emit("printJob", job)
   })
 
   socket.on('disconnect', () => {
