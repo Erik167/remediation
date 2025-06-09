@@ -1,4 +1,4 @@
-import dotenv from "dotenv"
+import dotenv from 'dotenv'
 dotenv.config()
 
 import express from 'express'
@@ -9,9 +9,9 @@ const app = express()
 const server = http.createServer(app)
 const io = new Server(server, {
   cors: {
-    origin: "*"
+    origin: '*',
   },
-  maxHttpBufferSize: 10e6
+  maxHttpBufferSize: 10e6,
 })
 
 app.get('/', (req, res) => {
@@ -24,7 +24,7 @@ io.on('connection', (socket) => {
   socket.on('sendJob', (job) => {
     console.log('📡 received job: ', job)
 
-    socket.broadcast.emit("printJob", job)
+    socket.broadcast.emit('printJob', job)
   })
 
   socket.on('sendClearJob', (job) => {
@@ -38,7 +38,7 @@ io.on('connection', (socket) => {
   })
 })
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000
 server.listen(PORT, () => {
   console.log(`PORT: ${PORT}`)
 })
