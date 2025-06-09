@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
 import { Server } from 'socket.io';
@@ -7,9 +7,9 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "*"
+        origin: '*',
     },
-    maxHttpBufferSize: 10e6
+    maxHttpBufferSize: 10e6,
 });
 app.get('/', (req, res) => {
     res.send('Server');
@@ -18,7 +18,11 @@ io.on('connection', (socket) => {
     console.log('Client connected:', socket.id);
     socket.on('sendJob', (job) => {
         console.log('📡 received job: ', job);
-        socket.broadcast.emit("printJob", job);
+        socket.broadcast.emit('printJob', job);
+    });
+    socket.on('sendClearJob', (job) => {
+        console.log('📡 received clear job: ', job);
+        socket.broadcast.emit('clearJob', job);
     });
     socket.on('disconnect', () => {
         console.log('Client disconnected:', socket.id);
