@@ -27,6 +27,12 @@ io.on('connection', (socket) => {
     socket.broadcast.emit("printJob", job)
   })
 
+  socket.on('sendClearJob', (job) => {
+    console.log('📡 received clear job: ', job)
+
+    socket.broadcast.emit('clearJob', job)
+  })
+
   socket.on('disconnect', () => {
     console.log('Client disconnected:', socket.id)
   })
